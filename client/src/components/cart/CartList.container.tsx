@@ -1,17 +1,17 @@
-import { useRouter } from "next/router";
-import { CartContainer } from "./CartList.styles";
+import { useRouter } from 'next/router';
+import { CartContainer } from './CartList.styles';
 
 export default function CartList() {
   const router = useRouter();
-  const onClickMoveToCheckOrder = async () => {
-    await router.push("/checkOrder");
+  const onClickMoveToOrderCheck = async () => {
+    await router.push('/order-check');
   };
 
   return (
     <>
       <CartContainer>
         <div>카트바... </div>
-        <button onClick={onClickMoveToCheckOrder}>결제</button>
+        <button onClick={onClickMoveToOrderCheck}>결제</button>
       </CartContainer>
     </>
   );

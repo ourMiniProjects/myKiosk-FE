@@ -1,21 +1,23 @@
 import { useRouter } from 'next/router';
+import BackButton from '../../src/components/commons/BackButton';
 
 export default function LoginPage() {
   const router = useRouter();
 
-  const onClickMoveToSelectCategory = async () => {
-    await router.push('/selectCategory');
+  const onClickMoveToSignup = async () => {
+    await router.push('/signup');
   };
-  const onClickMoveToAdmin = async () => {
-    await router.push('/admin');
+
+  const onClickMoveToMenu = async () => {
+    await router.push('/menu');
   };
 
   return (
     <>
-      <div>SelectStorePage</div>
-      <button onClick={onClickMoveToSelectCategory}>ㄴㄴㄴ</button>
-      <button onClick={onClickMoveToSelectCategory}>포장ㄴ</button>
-      <button onClick={onClickMoveToAdmin}>관리자페이지</button>
+      <div>LoginPage</div>
+      <BackButton />
+      <button onClick={onClickMoveToSignup}>회원가입</button>
+      <button onClick={onClickMoveToMenu}>로그인</button>
     </>
   );
 }
