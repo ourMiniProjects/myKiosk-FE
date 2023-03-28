@@ -1,4 +1,4 @@
-import Sidebar from "../../src/components/commons/layout/sidebar/Sidebar.container";
+import Sidebar from '../../src/components/sidebar/sidebar';
 
 export default function MainPage() {
   return (
