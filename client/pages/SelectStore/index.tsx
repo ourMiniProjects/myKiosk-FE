@@ -4,10 +4,10 @@ export default function SelectStorePage() {
   const router = useRouter();
 
   const onClickMoveToSelectCategory = async () => {
-    await router.push("/SelectCategory");
+    await router.push("/selectCategory");
   };
   const onClickMoveToAdmin = async () => {
-    await router.push("/Admin");
+    await router.push("/admin");
   };
 
   return (

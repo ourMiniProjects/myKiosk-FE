@@ -6,7 +6,7 @@ import SetMenu from "../../src/components/category/SetMenu";
 import SideMenu from "../../src/components/category/SideMenu";
 import Drink from "../../src/components/category/Drink";
 import Desserts from "../../src/components/category/Desserts";
-import CartList from "../../src/components/cart/CartList.container copy";
+import CartList from "../../src/components/cart/CartList.container";
 
 export default function SelectCategoryPage() {
   return (
