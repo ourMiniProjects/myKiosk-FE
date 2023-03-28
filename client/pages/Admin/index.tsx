@@ -1,11 +1,10 @@
-import Sidebar from '../../src/components/sidebar/Sidebar';
+import BackButton from '../../src/components/commons/BackButton';
 
 export default function Admin() {
   return (
     <>
-      <div>dssssssssd</div>
-
-      <Sidebar />
+      <BackButton />
+      <div>Admin</div>
     </>
   );
 }

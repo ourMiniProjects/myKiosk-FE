@@ -1,9 +1,11 @@
 import Sidebar from '../../src/components/sidebar/Sidebar';
+import BackButton from '../../src/components/commons/BackButton';
 
 export default function CheckOrder() {
   return (
     <>
-      <div>dd</div>
+      <BackButton />
+      <div>CheckOrder</div>
 
       <Sidebar />
     </>
