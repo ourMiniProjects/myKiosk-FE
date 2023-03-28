@@ -1,10 +1,10 @@
-import BackButton from '../../src/components/commons/BackButton';
+import BackButton from "../../src/components/commons/BackButton";
 
-export default function CompleteOrder() {
+export default function CompleteOrderPage() {
   return (
     <>
       <BackButton />
-      <div>CompleteOrder</div>
+      <div>CompleteOrderPage</div>
     </>
   );
 }

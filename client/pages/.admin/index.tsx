@@ -1,10 +1,10 @@
 import BackButton from "../../src/components/commons/BackButton";
 
-export default function CheckOrderPage() {
+export default function AdminPage() {
   return (
     <>
       <BackButton />
-      <div>CheckOrderPage</div>
+      <div>AdminPage</div>
     </>
   );
 }
