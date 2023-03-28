@@ -1,12 +1,12 @@
 // 컴포넌트
 import BackButton from "../../src/components/commons/BackButton";
-import CartForm from "../../src/components/cart/CartForm";
-import Burgers from "../../src/components/category/Burgers";
 import Signature from "../../src/components/category/Signature";
+import Burgers from "../../src/components/category/Burgers";
 import SetMenu from "../../src/components/category/SetMenu";
 import SideMenu from "../../src/components/category/SideMenu";
 import Drink from "../../src/components/category/Drink";
 import Desserts from "../../src/components/category/Desserts";
+import CartList from "../../src/components/cart/CartList.container copy";
 
 export default function SelectCategoryPage() {
   return (
@@ -21,8 +21,7 @@ export default function SelectCategoryPage() {
         <Drink />
         <Desserts />
       </div>
-
-      <CartForm />
+      <CartList />
     </>
   );
 }

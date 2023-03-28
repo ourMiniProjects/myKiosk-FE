@@ -1,11 +1,9 @@
-import React from 'react';
-
 interface BackButtonProps {
   onClick?: () => void;
 }
 
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
-  const handleClick = () => {
+  const onClickBackButton = () => {
     if (onClick) {
       onClick();
     } else {
@@ -14,7 +12,7 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
   };
 
   return (
-    <button onClick={handleClick} style={{ cursor: 'pointer' }}>
+    <button onClick={onClickBackButton} style={{ cursor: "pointer" }}>
       뒤로가기버튼..
     </button>
   );
