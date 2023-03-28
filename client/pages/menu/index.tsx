@@ -1,12 +1,12 @@
 // 컴포넌트
-import BackButton from "../../src/components/commons/BackButton";
-import Signature from "../../src/components/category/Signature";
-import Burgers from "../../src/components/category/Burgers";
-import SetMenu from "../../src/components/category/SetMenu";
-import SideMenu from "../../src/components/category/SideMenu";
-import Drink from "../../src/components/category/Drink";
-import Desserts from "../../src/components/category/Desserts";
+import Signature from "../../src/components/units/category/Signature";
+import Burgers from "../../src/components/units/category/Burgers";
+import SetMenu from "../../src/components/units/category/SetMenu";
+import SideMenu from "../../src/components/units/category/SideMenu";
+import Drink from "../../src/components/units/category/Drink";
+import Desserts from "../../src/components/units/category/Desserts";
 import CartList from "../../src/components/commons/layout/cart/CartList.container";
+import BackButton from "../../src/components/commons/button/BackButton";
 
 export default function MenuPage() {
   return (
