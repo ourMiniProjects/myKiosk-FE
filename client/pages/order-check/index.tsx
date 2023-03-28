@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import BackButton from '../../src/components/commons/BackButton';
+import { useRouter } from "next/router";
+import BackButton from "../../src/components/commons/button/BackButton";
 
 export default function CheckOrderPage() {
   const router = useRouter();
 
   const onClickMoveToOrderComplete = async () => {
-    await router.push('/order-complete');
+    await router.push("/order-complete");
   };
 
   return (
