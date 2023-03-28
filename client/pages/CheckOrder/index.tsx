@@ -1,4 +1,3 @@
-import Sidebar from '../../src/components/sidebar/Sidebar';
 import BackButton from '../../src/components/commons/BackButton';
 
 export default function CheckOrder() {
@@ -6,8 +5,6 @@ export default function CheckOrder() {
     <>
       <BackButton />
       <div>CheckOrder</div>
-
-      <Sidebar />
     </>
   );
 }
