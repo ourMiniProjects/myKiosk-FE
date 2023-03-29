@@ -29,37 +29,58 @@ export default function MenuPage() {
     desserts: false,
   });
 
+  const [showButtons, setShowButtons] = useState(true);
+
   const handleToggleCategory = (categoryName: CategoryName) => {
     setShowCategory((prevState) => ({
       ...prevState,
       [categoryName]: !prevState[categoryName],
     }));
+    setShowButtons(false);
+  };
+
+  const handleBack = () => {
+    setShowButtons(true);
+    setShowCategory({
+      signature: false,
+      burgers: false,
+      setMenu: false,
+      sideMenu: false,
+      drink: false,
+      desserts: false,
+    });
   };
 
   return (
     <>
-      <BackButton />
+      <BackButton onClick={handleBack} />
       <div>MenuPage</div>
       <div>
-        <button onClick={() => handleToggleCategory('signature')}>
-          Signature
-        </button>
+        {showButtons && (
+          <>
+            <button onClick={() => handleToggleCategory('signature')}>
+              Signature
+            </button>
+            <button onClick={() => handleToggleCategory('burgers')}>
+              Burgers
+            </button>
+            <button onClick={() => handleToggleCategory('setMenu')}>
+              Set Menu
+            </button>
+            <button onClick={() => handleToggleCategory('sideMenu')}>
+              Side Menu
+            </button>
+            <button onClick={() => handleToggleCategory('drink')}>Drink</button>
+            <button onClick={() => handleToggleCategory('desserts')}>
+              Desserts
+            </button>
+          </>
+        )}
         {showCategory.signature && <Signature />}
-        <button onClick={() => handleToggleCategory('burgers')}>Burgers</button>
         {showCategory.burgers && <Burgers />}
-        <button onClick={() => handleToggleCategory('setMenu')}>
-          Set Menu
-        </button>
         {showCategory.setMenu && <SetMenu />}
-        <button onClick={() => handleToggleCategory('sideMenu')}>
-          Side Menu
-        </button>
         {showCategory.sideMenu && <SideMenu />}
-        <button onClick={() => handleToggleCategory('drink')}>Drink</button>
         {showCategory.drink && <Drink />}
-        <button onClick={() => handleToggleCategory('desserts')}>
-          Desserts
-        </button>
         {showCategory.desserts && <Desserts />}
       </div>
       <CartList />
