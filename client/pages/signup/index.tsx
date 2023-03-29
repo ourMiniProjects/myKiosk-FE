@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import BackButton from '../../src/components/commons/BackButton';
+import { useRouter } from "next/router";
+import BackButton from "../../src/components/commons/button/BackButton";
 
 export default function signupPage() {
   const router = useRouter();
 
   const onClickMoveToMenu = async () => {
-    await router.push('/menu');
+    await router.push("/menu");
   };
 
   return (
