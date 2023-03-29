@@ -1,18 +1,25 @@
-import { useRouter } from 'next/router';
-import { CartContainer } from './CartList.styles';
+// ----------------------------------------------------------------------------------
+//  LayoutCart.container
+// ----------------------------------------------------------------------------------
+
+import CartListUI from "./CartList.presenter";
+import { useRouter } from "next/router";
+import { type MouseEvent } from "react";
+
+export interface ICartListUIProps {
+  onClickMoveToPay: (event: MouseEvent<HTMLDivElement>) => void;
+}
 
 export default function CartList() {
   const router = useRouter();
-  const onClickMoveToOrderCheck = async () => {
-    await router.push('/order-check');
+
+  const onClickMoveToPay = (event: MouseEvent<HTMLDivElement>) => {
+    void router.push("/order-check");
   };
 
   return (
     <>
-      <CartContainer>
-        <div>카트바... </div>
-        <button onClick={onClickMoveToOrderCheck}>결제</button>
-      </CartContainer>
+      <CartListUI onClickMoveToPay={onClickMoveToPay} />
     </>
   );
 }
