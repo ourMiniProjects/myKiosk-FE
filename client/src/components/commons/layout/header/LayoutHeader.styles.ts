@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 15%;
+  height: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
   /* flex-direction: row; */
-  /* background-color: #f7cc5c; */
+  background-color: #f7cc5c; // 임시
 `;
 
 export const InnerWrapper = styled.div`

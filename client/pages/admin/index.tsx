@@ -1,4 +1,4 @@
-import BackButton from "../../src/components/commons/BackButton";
+import BackButton from "../../src/components/commons/button/BackButton";
 
 export default function AdminPage() {
   return (

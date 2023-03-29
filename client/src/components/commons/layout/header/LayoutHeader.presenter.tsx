@@ -1,8 +1,8 @@
 import { ILayoutHeaderProps } from "./LayoutHeader.container";
 import {
   InnerButton,
-  InnerLogo,
   InnerWrapper,
+  InnerLogo,
   Wrapper,
 } from "./LayoutHeader.styles";
 
