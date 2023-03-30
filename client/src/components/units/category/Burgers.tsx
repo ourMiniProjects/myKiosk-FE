@@ -3,6 +3,7 @@ import axios from "axios";
 import { useCart } from "../../commons/cart/CartContext";
 import { MenuItem } from "./MenuItem";
 import styled from "styled-components";
+import { CardWrapper2, MenuContainer } from "../../commons/card/MenuCard2";
 // import { CardWrapper, MenuContainer } from "../../commons/card/MenuCard";
 
 type MenuList = MenuItem[][];
@@ -40,7 +41,7 @@ const Burgers = () => {
         {menuList.map((menuItems, index) => (
           <div key={index}>
             {menuItems.map((menuItem) => (
-              <CardWrapper
+              <CardWrapper2
                 key={menuItem.id}
                 onClick={() => handleItemClick(menuItem)}
               >
@@ -48,7 +49,7 @@ const Burgers = () => {
                 <h4>{menuItem.menuName}</h4>
                 <p>{menuItem.price}원</p>
                 <p>수량: {menuItem.amount}</p>
-              </CardWrapper>
+              </CardWrapper2>
             ))}
           </div>
         ))}
@@ -58,18 +59,6 @@ const Burgers = () => {
 };
 
 export default Burgers;
-export const MenuContainer = styled.div`
-  display: grid;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto, 1fr);
-  justify-content: center;
-  width: 1300px;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f6f6f6;
-`;
 
 export const CardWrapper = styled.div`
   display: flex;

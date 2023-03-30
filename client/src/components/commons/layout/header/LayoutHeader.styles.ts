@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 10px;
   /* flex-direction: row; */
-  background-color: #f7cc5c; // 임시
+  /* background-color: #f7cc5c; // 임시 */
 `;
 
 export const InnerWrapper = styled.div`

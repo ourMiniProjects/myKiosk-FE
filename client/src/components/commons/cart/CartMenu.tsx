@@ -1,6 +1,14 @@
 // CartMenu.tsx
-import { useCart } from './CartContext';
-import { MenuItem } from '../../units/category/MenuItem';
+import { useCart } from "./CartContext";
+import { MenuItem } from "../../units/category/MenuItem";
+import {
+  CartIcon,
+  CartSelectedItems,
+  CartTotal,
+  CountButton,
+  CountButtonWrapper,
+  Title,
+} from "./CartList.styles";
 
 interface CartItemProps {
   item: MenuItem;
@@ -11,15 +19,19 @@ const CartItem: React.FC<CartItemProps> = ({ item, index }) => {
   const { incrementItem, decrementItem, removeItem } = useCart();
 
   return (
-    <div key={index}>
-      {/* <img src={item.imageUrl} alt={item.menuName} /> */}
-      <h4>{item.menuName}</h4>
-      <p>{item.price * item.amount}원</p>
-      <p>수량: {item.amount}</p>
-      <button onClick={() => incrementItem(item.id)}>+</button>
-      <button onClick={() => decrementItem(item.id)}>-</button>
-      <button onClick={() => removeItem(item.id)}>삭제</button>
-    </div>
+    <CartSelectedItems>
+      <div key={index}>
+        {/* <img src={item.imageUrl} alt={item.menuName} /> */}
+        <h4>{item.menuName}</h4>
+        <p>{item.price * item.amount}원</p>
+        <p>수량: {item.amount}</p>
+        <CountButtonWrapper>
+          <CountButton onClick={() => incrementItem(item.id)}>+</CountButton>
+          <CountButton onClick={() => decrementItem(item.id)}>-</CountButton>
+          <CountButton onClick={() => removeItem(item.id)}>X</CountButton>
+        </CountButtonWrapper>
+      </div>
+    </CartSelectedItems>
   );
 };
 
@@ -32,11 +44,14 @@ const CartMenu = () => {
 
   return (
     <div>
-      <h2>장바구니</h2>
+      <Title>
+        <CartIcon />
+        장바구니
+      </Title>
       {items.map((item, index) => (
         <CartItem item={item} index={index} key={index} />
       ))}
-      <h3>총 결제 금액: {totalPrice}원</h3>
+      <CartTotal>TOTAL : {totalPrice} 원</CartTotal>
     </div>
   );
 };
