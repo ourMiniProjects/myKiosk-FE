@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import Signature from '../../src/components/units/category/Signature';
-import Burgers from '../../src/components/units/category/Burgers';
-import SetMenu from '../../src/components/units/category/SetMenu';
-import SideMenu from '../../src/components/units/category/SideMenu';
-import Drink from '../../src/components/units/category/Drink';
-import Desserts from '../../src/components/units/category/Desserts';
-import CartList from '../../src/components/commons/cart/CartList.container';
-import BackButton from '../../src/components/commons/button/BackButton';
-import styled from 'styled-components';
-import LayoutHeader from '../../src/components/commons/layout/header/LayoutHeader.container';
+import React, { useState } from "react";
+import Signature from "../../src/components/units/category/Signature";
+import Burgers from "../../src/components/units/category/Burgers";
+import SetMenu from "../../src/components/units/category/SetMenu";
+import SideMenu from "../../src/components/units/category/SideMenu";
+import Drink from "../../src/components/units/category/Drink";
+import Desserts from "../../src/components/units/category/Desserts";
+import CartList from "../../src/components/commons/cart/CartList.container";
+import BackButton from "../../src/components/commons/button/BackButton";
+import styled from "styled-components";
+import LayoutHeader from "../../src/components/commons/layout/header/LayoutHeader.container";
+import { CardWrapper } from "../../src/components/commons/card/MenuCard";
 
 interface ShowCategoryState {
   signature: boolean;
@@ -56,7 +57,7 @@ export default function MenuPage() {
   return (
     <>
       <Wrapper>
-        <div style={{ width: '75%' }}>
+        <div style={{ width: "75%" }}>
           <LayoutHeader />
           <Contents>
             {/* FIXME: 뒤로가기 버튼, 조건걸기... */}
@@ -66,22 +67,22 @@ export default function MenuPage() {
             <div>
               {showButtons && (
                 <>
-                  <button onClick={() => handleToggleCategory('signature')}>
+                  <button onClick={() => handleToggleCategory("signature")}>
                     Signature
                   </button>
-                  <button onClick={() => handleToggleCategory('burgers')}>
+                  <button onClick={() => handleToggleCategory("burgers")}>
                     Burgers
                   </button>
-                  <button onClick={() => handleToggleCategory('setMenu')}>
+                  <button onClick={() => handleToggleCategory("setMenu")}>
                     Set Menu
                   </button>
-                  <button onClick={() => handleToggleCategory('sideMenu')}>
+                  <button onClick={() => handleToggleCategory("sideMenu")}>
                     Side Menu
                   </button>
-                  <button onClick={() => handleToggleCategory('drink')}>
+                  <button onClick={() => handleToggleCategory("drink")}>
                     Drink
                   </button>
-                  <button onClick={() => handleToggleCategory('desserts')}>
+                  <button onClick={() => handleToggleCategory("desserts")}>
                     Desserts
                   </button>
                 </>
@@ -95,7 +96,7 @@ export default function MenuPage() {
             </div>
           </Contents>
         </div>
-        <div style={{ width: '25%' }}>
+        <div style={{ width: "25%" }}>
           <CartList />
         </div>
       </Wrapper>

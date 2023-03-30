@@ -1,8 +1,8 @@
-import type { AppProps } from 'next/app';
-import { CartProvider } from '../src/components/commons/cart/CartContext';
-import Layout from '../src/components/commons/layout';
+import type { AppProps } from "next/app";
+import { CartProvider } from "../src/components/commons/cart/CartContext";
+import Layout from "../src/components/commons/layout";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Layout>
@@ -13,7 +13,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
-export default MyApp;
 
 // CartProvider - 장바구니..

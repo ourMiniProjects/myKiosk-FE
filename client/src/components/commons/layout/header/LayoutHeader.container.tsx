@@ -10,7 +10,7 @@ export default function LayoutHeader() {
   const router = useRouter();
 
   const onClickLogo = () => {
-    void router.push("/boards");
+    void router.push("/");
   };
 
   // 회원&비회원 선택 페이지로 옮길 가능성 높음!

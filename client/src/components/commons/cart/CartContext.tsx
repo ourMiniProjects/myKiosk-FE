@@ -1,5 +1,6 @@
 // CartContext.tsx
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
+import { MenuItem } from "../../units/category/MenuItem";
 
 interface CartItem extends MenuItem {}
 
@@ -16,7 +17,7 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };
