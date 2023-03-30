@@ -12,7 +12,7 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
   };
 
   return (
-    <button onClick={onClickBackButton} style={{ cursor: "pointer" }}>
+    <button onClick={onClickBackButton} style={{ cursor: 'pointer' }}>
       뒤로가기버튼..
     </button>
   );

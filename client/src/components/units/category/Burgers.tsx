@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useCart } from '../../commons/cart/CartContext';
-
-interface MenuItem {
-  id: number;
-  menuName: string;
-  price: number;
-  imageUrl: string;
-  amount: number;
-}
+import { MenuItem } from './MenuItem';
 
 type MenuList = MenuItem[][];
 
@@ -45,11 +38,7 @@ const Burgers = () => {
         <div key={index}>
           {menuItems.map((menuItem) => (
             <div key={menuItem.id} onClick={() => handleItemClick(menuItem)}>
-              <img
-                src={menuItem.imageUrl}
-                alt={menuItem.menuName}
-                onClick={() => handleItemClick(menuItem)}
-              />
+              <img src={menuItem.imageUrl} alt={menuItem.menuName} />
               <h4>{menuItem.menuName}</h4>
               <p>{menuItem.price}원</p>
               <p>수량: {menuItem.amount}</p>
