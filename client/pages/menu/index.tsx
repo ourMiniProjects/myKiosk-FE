@@ -9,7 +9,6 @@ import CartList from "../../src/components/commons/cart/CartList.container";
 import BackButton from "../../src/components/commons/button/BackButton";
 import styled from "styled-components";
 import LayoutHeader from "../../src/components/commons/layout/header/LayoutHeader.container";
-import { CardWrapper } from "../../src/components/commons/card/MenuCard";
 
 interface ShowCategoryState {
   signature: boolean;
@@ -108,15 +107,12 @@ export default function MenuPage() {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 const Contents = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  margin: 20px;
-  border: solid 2px grey;
+  padding: 20px;
+  /* border: solid 2px grey; */
 `;
