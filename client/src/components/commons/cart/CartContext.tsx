@@ -25,7 +25,11 @@ export const CartProvider: React.FC = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
 
   const addToCart = (item: CartItem) => {
-    setItems([...items, item]);
+    const existingItem = items.find((existing) => existing.id === item.id);
+
+    if (!existingItem) {
+      setItems([...items, item]);
+    }
   };
 
   const incrementItem = (id: number) => {
