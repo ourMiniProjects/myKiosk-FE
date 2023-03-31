@@ -9,6 +9,7 @@ import CartList from '../../src/components/commons/cart/CartList.container';
 import BackButton from '../../src/components/commons/button/BackButton';
 import styled from 'styled-components';
 import LayoutHeader from '../../src/components/commons/layout/header/LayoutHeader.container';
+import { useCart } from '../../src/components/commons/cart/CartContext';
 
 interface ShowCategoryState {
   signature: boolean;
@@ -32,6 +33,7 @@ export default function MenuPage() {
   });
 
   const [showButtons, setShowButtons] = useState(true);
+  const { clearCart } = useCart();
 
   const handleToggleCategory = (categoryName: CategoryName) => {
     setShowCategory((prevState) => ({
@@ -44,6 +46,7 @@ export default function MenuPage() {
   const handleBack = () => {
     if (showButtons) {
       // 카테고리 목록이 표시되어 있을 때만 이전 페이지로 이동
+      clearCart();
       window.history.back();
     } else {
       setShowButtons(true);
@@ -64,8 +67,6 @@ export default function MenuPage() {
         <div style={{ width: '75%' }}>
           <LayoutHeader />
           <Contents>
-            {/* FIXME: 뒤로가기 버튼, 조건걸기... */}
-            {/* <BackButton /> */}
             <BackButton onClick={handleBack} />
             <div>MenuPage</div>
             <div>

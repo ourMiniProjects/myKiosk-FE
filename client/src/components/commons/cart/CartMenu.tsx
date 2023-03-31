@@ -26,8 +26,8 @@ const CartItem: React.FC<CartItemProps> = ({ item, index }) => {
         <p>{item.price * item.amount}원</p>
         <p>수량: {item.amount}</p>
         <CountButtonWrapper>
-          <CountButton onClick={() => incrementItem(item.id)}>+</CountButton>
           <CountButton onClick={() => decrementItem(item.id)}>-</CountButton>
+          <CountButton onClick={() => incrementItem(item.id)}>+</CountButton>
           <CountButton onClick={() => removeItem(item.id)}>X</CountButton>
         </CountButtonWrapper>
       </div>
