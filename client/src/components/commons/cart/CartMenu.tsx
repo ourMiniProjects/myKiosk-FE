@@ -1,6 +1,6 @@
 // CartMenu.tsx
-import { useCart } from "./CartContext";
-import { MenuItem } from "../../units/category/MenuItem";
+import { useCart } from './CartContext';
+import { MenuItem } from '../../units/category/MenuItem';
 import {
   CartIcon,
   CartSelectedItems,
@@ -8,7 +8,7 @@ import {
   CountButton,
   CountButtonWrapper,
   Title,
-} from "./CartList.styles";
+} from './CartList.styles';
 
 interface CartItemProps {
   item: MenuItem;
