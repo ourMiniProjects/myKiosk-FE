@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
-import { StLayoutStart } from "./Hamburger-animation";
+import { StStartPageUI } from "./StartPage.styles";
 
-const LayoutStart = () => {
+const StartPageUI = () => {
   const router = useRouter();
 
   const onClickMoveToLogin = () => {
-    router.push("/menu");
+    router.push("/membership-select");
   };
 
   return (
-    <StLayoutStart onClick={onClickMoveToLogin}>
+    <StStartPageUI onClick={onClickMoveToLogin}>
       <div className="card">
         <div className="content">
           <svg
@@ -181,8 +181,8 @@ const LayoutStart = () => {
           </div>
         </div>
       </div>
-    </StLayoutStart>
+    </StStartPageUI>
   );
 };
 
-export default LayoutStart;
+export default StartPageUI;

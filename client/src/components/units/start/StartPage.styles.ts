@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StLayoutStart = styled.div`
+export const StStartPageUI = styled.div`
   .card {
     width: 190px;
     height: 254px;
