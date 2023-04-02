@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const MenuContainer = styled.div`
-  /* display: grid; */
-  /* flex-wrap: wrap; */
-  /* grid-template-columns: repeat(4, 1fr); */
-  /* grid-template-rows: repeat(3, 1fr); */
-  display: flex;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* display: flex; */
   /* justify-content: space-around; */
   align-items: flex-start;
   /* width: 1300px; */
@@ -51,8 +51,11 @@ export const CardWrapper2 = styled.div`
   color: black;
   border-radius: 30px;
   background: #fafafac3;
-  box-shadow: 15px 15px 40px #bebebe, -15px -15px 10px #ffffff;
-
+  box-shadow: 15px 15px 30px #bebebe, 10px 5px 10px #ffffff;
+  cursor: pointer;
+  :hover {
+    background-color: #f7ce5ccf;
+  }
   img {
     width: 100%;
   }

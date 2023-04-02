@@ -1,11 +1,7 @@
-// ----------------------------------------------------------------------------------
-//  LayoutCart.styles
-// ----------------------------------------------------------------------------------
-
-import styled from 'styled-components';
-import { BsCart3 } from 'react-icons/bs';
-import { FiPlus } from 'react-icons/fi';
-import { FiMinus } from 'react-icons/fi';
+import styled from "styled-components";
+import { BsCart3 } from "react-icons/bs";
+import { FiPlus } from "react-icons/fi";
+import { FiMinus } from "react-icons/fi";
 
 export const CartWrapper = styled.div`
   display: flex;

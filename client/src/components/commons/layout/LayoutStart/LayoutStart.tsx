@@ -175,7 +175,7 @@ const LayoutStart = () => {
           </svg>
           <div className="description">
             <p className="title">
-              <strong>Best choice fot your meal</strong>
+              <strong>Best choice for your meal</strong>
             </p>
             {/* <p className="price">MyKiosk!</p> */}
           </div>
