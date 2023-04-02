@@ -73,7 +73,7 @@ export default function MenuPage() {
           <LayoutHeader />
           <Contents>
             <BackButton onClick={handleBack} />
-            <div>MenuPage</div>
+            {/* <div>MenuPage</div> */}
             <div>
               {showButtons && (
                 <>

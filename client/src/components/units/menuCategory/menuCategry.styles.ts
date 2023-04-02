@@ -19,6 +19,7 @@ export const MenuCategoryCard = styled.div`
   width: 25%;
   height: 85%;
   padding-bottom: 10px;
+  border: solid 1px #eaeaea9a;
   border-radius: 30px;
   /* background: #e0e0e0; */
   /* box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff; */
