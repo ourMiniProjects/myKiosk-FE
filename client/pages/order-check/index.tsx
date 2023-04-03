@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import BackButton from '../../src/components/commons/button/BackButton';
 import { useCart } from '../../src/components/commons/cart/CartContext';
+import OrderItem from '../../src/components/units/order/OrderItem';
 
 export default function CheckOrderPage() {
   const router = useRouter();
@@ -19,12 +20,14 @@ export default function CheckOrderPage() {
       <BackButton />
       <div>CheckOrderPage</div>
       {items.map((item) => (
-        <div key={item.id}>
-          <div>{item.menuName}</div>
-          <div>{item.amount}</div>
-          <div> ${item.price}</div>
-          <div>: ${item.amount * item.price}</div>
-        </div>
+        <OrderItem
+          key={item.id}
+          id={item.id}
+          menuName={item.menuName}
+          amount={item.amount}
+          price={item.price}
+          imageUrl={item.imageUrl}
+        />
       ))}
       <h2>Total: ${calculateTotalPrice()}</h2>
       <button onClick={onClickMoveToOrderComplete}>결제....</button>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // CartContext.tsx
 import { createContext, useContext, useState } from 'react';
 import { MenuItem } from '../../units/category/MenuItem';
