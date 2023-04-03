@@ -8,6 +8,9 @@ export const MenuCategoryContainer = styled.div`
   width: 100%;
   height: 410px;
   overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   /* background-color: #f6f6f6; */
 `;
 

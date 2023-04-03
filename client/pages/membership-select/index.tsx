@@ -13,16 +13,10 @@ export default function MembershipCheckPage() {
     await router.push("/menu");
   };
 
-  const onClickMoveToAdmin = async () => {
-    await router.push("/admin");
-  };
-
   return (
     <>
       <div>MembershipSelectPage</div>
       <BackButton />
-      <button onClick={onClickMoveToAdmin}>관리자페이지</button>
-
       <Container>
         <MembershipSelectCard onClick={onClickMoveToLogin}>
           <img src="/images/select-member.png" />

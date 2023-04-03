@@ -7,7 +7,7 @@ import {
   ImageBox,
   InputBox,
   SelectCardSignup,
-} from "../../src/components/units/signUp/SignUp.styles";
+} from "./signUp.styles";
 
 export default function signupPage() {
   const router = useRouter();

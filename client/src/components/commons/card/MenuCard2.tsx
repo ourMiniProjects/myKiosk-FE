@@ -1,16 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MenuContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; 
-  align-items: flex-start; */
+  justify-content: space-evenly;
+  /* align-items: flex-start; */
   width: 100%;
   height: 740px;
   /* margin: 0 auto; */
-  /* margin-left: 10px; */
   overflow: scroll;
-  /* padding: 20px; */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  padding-bottom: 50px;
   /* background-color: #f6f6f6; */
 `;
 

@@ -14,14 +14,17 @@ export const SelectCardSignup = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 20%;
-  height: 55%;
+  /* width: 20%; */
+  /* height: 55%; */
+  width: 300px;
+  height: 400px;
   padding: 20px;
   margin: -100px 70px 0px 70px;
   border: solid 1px #eaeaea9a;
   border-radius: 30px;
   box-shadow: 10px 10px 30px #bebebe, 10px 5px 10px #ffffff;
-  font-size: 20pt;
+  /* font-size: 20pt; */
+  font-size: 150%;
   font-weight: 600;
   color: #464646;
 
@@ -34,7 +37,8 @@ export const ImageBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20%;
+  /* width: 20%; */
+  width: 350px;
   height: 55%;
   padding: 20px;
   margin: -100px 70px 0px 70px;

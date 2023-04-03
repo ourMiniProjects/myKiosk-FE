@@ -46,9 +46,9 @@ const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
   border: none;
   border-radius: 0.375rem;
-  padding: 10px;
   background-color: #eee;
   cursor: pointer;
   font-size: 20px;
@@ -107,7 +107,8 @@ const LoginButton = styled.div`
   &:active {
     background-color: #ccc;
   }
-  width: 70%;
+  /* width: 70%; */
+  width: 192px;
   /* background-color: aliceblue; */
 `;
 
@@ -128,6 +129,7 @@ const ZeroButton = styled.div`
   &:active {
     background-color: #ccc;
   }
-  width: 30%;
+  /* width: 30%; */
+  width: 78px;
   /* background-color: aliceblue; */
 `;

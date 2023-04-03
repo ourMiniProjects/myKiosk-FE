@@ -1,10 +1,9 @@
 // src/components/units/order/OrderItem.tsx
-import React from 'react';
 import {
   OrderItemWrapper,
   OrderItemImage,
   OrderItemInfo,
-} from './OrderItem.styles';
+} from "./OrderItem.styles";
 
 interface OrderItemProps {
   id: number;
