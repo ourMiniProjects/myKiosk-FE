@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import BackButton from "../../src/components/commons/button/BackButton";
 import { Container, MembershipSelectCard } from "./membership-select.styles";
 
 export default function MembershipCheckPage() {
@@ -19,6 +20,7 @@ export default function MembershipCheckPage() {
   return (
     <>
       <div>MembershipSelectPage</div>
+      <BackButton />
       <button onClick={onClickMoveToAdmin}>관리자페이지</button>
 
       <Container>

@@ -15,9 +15,9 @@ export const MembershipSelectCard = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 20%;
-  height: 500px;
-  padding: 30px;
-  margin: -50px 70px 0px 70px;
+  height: 55%;
+  padding: 20px;
+  margin: -100px 70px 0px 70px;
   border: solid 1px #eaeaea9a;
   border-radius: 30px;
   box-shadow: 10px 10px 30px #bebebe, 10px 5px 10px #ffffff;

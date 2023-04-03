@@ -11,10 +11,10 @@ import styled from "styled-components";
 import LayoutHeader from "../../src/components/commons/layout/header/LayoutHeader.container";
 import { useCart } from "../../src/components/commons/cart/CartContext";
 import {
-  CategoryTextBox,
-  MenuCategoryCard,
   MenuCategoryContainer,
-} from "../../src/components/units/menuCategory/menuCategry.styles";
+  MenuCategoryCard,
+  CategoryTextBox,
+} from "../../src/components/units/menuCategory/MenuCategory.styles";
 
 interface ShowCategoryState {
   signature: boolean;
