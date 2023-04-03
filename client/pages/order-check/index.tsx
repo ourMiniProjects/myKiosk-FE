@@ -2,6 +2,11 @@ import { useRouter } from 'next/router';
 import BackButton from '../../src/components/commons/button/BackButton';
 import { useCart } from '../../src/components/commons/cart/CartContext';
 import OrderItem from '../../src/components/units/order/OrderItem';
+import {
+  TotalPriceWrapper,
+  TotalPrice,
+  CheckoutButton,
+} from './order-check.styles';
 
 export default function CheckOrderPage() {
   const router = useRouter();
@@ -29,8 +34,12 @@ export default function CheckOrderPage() {
           imageUrl={item.imageUrl}
         />
       ))}
-      <h2>Total: ${calculateTotalPrice()}</h2>
-      <button onClick={onClickMoveToOrderComplete}>결제....</button>
+      <TotalPriceWrapper>
+        <TotalPrice>Total: ${calculateTotalPrice()}</TotalPrice>
+        <CheckoutButton onClick={onClickMoveToOrderComplete}>
+          결제....
+        </CheckoutButton>
+      </TotalPriceWrapper>
     </>
   );
 }

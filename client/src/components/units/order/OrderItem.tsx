@@ -1,7 +1,11 @@
 // src/components/units/order/OrderItem.tsx
 import React from 'react';
-import { OrderItemWrapper,OrderItemImage,OrderItemInfo } from './OrderItem.styles';
-import { FaWonSign } from 'react-icons/fa';
+import {
+  OrderItemWrapper,
+  OrderItemImage,
+  OrderItemInfo,
+} from './OrderItem.styles';
+
 interface OrderItemProps {
   id: number;
   menuName: string;
@@ -25,7 +29,6 @@ const OrderItem: React.FC<OrderItemProps> = ({
       {/* <OrderItemInfo> ${price}</OrderItemInfo> */}
       <OrderItemInfo> ￦{amount * price}</OrderItemInfo>
     </OrderItemWrapper>
-    
   );
 };
 
