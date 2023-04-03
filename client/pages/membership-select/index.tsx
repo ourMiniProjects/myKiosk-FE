@@ -1,6 +1,11 @@
 import { useRouter } from "next/router";
-import BackButton from "../../src/components/commons/button/BackButton";
-import { Container, MembershipSelectCard } from "./membership-select.styles";
+import {
+  AdminButton,
+  Container,
+  MembershipSelectCard,
+  StButtonContainer,
+} from "./membership-select.styles";
+import { RiUserSettingsLine } from "react-icons/ri";
 
 export default function MembershipSelectPage() {
   const router = useRouter();
@@ -13,10 +18,17 @@ export default function MembershipSelectPage() {
     await router.push("/menu");
   };
 
+  const onClickMoveToAdmin = () => {
+    void router.push("/admin");
+  };
+
   return (
     <>
-      <div>MembershipSelectPage</div>
-      <BackButton />
+      <StButtonContainer>
+        <AdminButton onClick={onClickMoveToAdmin}>
+          <RiUserSettingsLine />
+        </AdminButton>
+      </StButtonContainer>
       <Container>
         <MembershipSelectCard onClick={onClickMoveToLogin}>
           <img src="/images/select-member.png" />
