@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MenuContainer = styled.div`
   /* display: grid; */
@@ -6,6 +6,7 @@ export const MenuContainer = styled.div`
   /* grid-template-columns: repeat(4, 1fr); */
   /* grid-template-rows: repeat(3, 1fr); */
   display: flex;
+  flex-direction: row;
   /* justify-content: space-around; */
   align-items: flex-start;
   /* width: 1300px; */
