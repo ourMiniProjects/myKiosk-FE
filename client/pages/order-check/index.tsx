@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import BackButton from "../../src/components/commons/button/BackButton";
 import { useCart } from "../../src/components/commons/cart/CartContext";
 import OrderItem from "../../src/components/units/order/OrderItem";
 import {
@@ -22,7 +21,6 @@ export default function OrderCheckPage() {
 
   return (
     <>
-      <BackButton />
       <div>CheckOrderPage</div>
       {items.map((item) => (
         <OrderItem

@@ -1,6 +1,5 @@
 import { Input } from "antd";
 import { useRouter } from "next/router";
-import BackButton from "../../src/components/commons/button/BackButton";
 import NumberPad from "../../src/components/commons/numberpad/NumberPad";
 import {
   Container,
@@ -18,8 +17,6 @@ export default function SignUpPage() {
 
   return (
     <>
-      <div>회원가입Page</div>
-      <BackButton />
       <Container>
         <SelectCardSignup onClick={onClickMoveToMenu}>
           <img style={{ marginTop: "15px" }} src="/images/joinUs-title.png" />

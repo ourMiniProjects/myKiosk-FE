@@ -1,4 +1,3 @@
-import BackButton from "../../src/components/commons/button/BackButton";
 import Lottie from "react-lottie";
 import animationData from "../../src/components/commons/lotties/burger-preparing.json";
 import styled from "styled-components";
@@ -22,7 +21,6 @@ export default function OrderCompletePage() {
 
   return (
     <>
-      <BackButton />
       <Wrapper>
         <Burger>
           <Lottie options={defaultOptions} height={500} width={500} />

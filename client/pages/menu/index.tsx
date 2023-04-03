@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import Signature from '../../src/components/units/category/Signature';
-import Burgers from '../../src/components/units/category/Burgers';
-import SetMenu from '../../src/components/units/category/SetMenu';
-import SideMenu from '../../src/components/units/category/SideMenu';
-import Drink from '../../src/components/units/category/Drink';
-import Desserts from '../../src/components/units/category/Desserts';
-import CartList from '../../src/components/commons/cart/CartList.container';
-import BackButton from '../../src/components/commons/button/BackButton';
-import styled from 'styled-components';
-import LayoutHeader from '../../src/components/commons/layout/header/LayoutHeader.container';
-import { useCart } from '../../src/components/commons/cart/CartContext';
+import { useState } from "react";
+import styled from "styled-components";
+import Signature from "../../src/components/units/category/Signature";
+import Burgers from "../../src/components/units/category/Burgers";
+import SetMenu from "../../src/components/units/category/SetMenu";
+import SideMenu from "../../src/components/units/category/SideMenu";
+import Drink from "../../src/components/units/category/Drink";
+import Desserts from "../../src/components/units/category/Desserts";
+import CartList from "../../src/components/commons/cart/CartList.container";
+import LayoutHeader from "../../src/components/commons/layout/header/LayoutHeader.container";
+import MenuBackButton from "../../src/components/commons/button/MenuBackButton";
+import { useCart } from "../../src/components/commons/cart/CartContext";
 import {
   MenuCategoryContainer,
   MenuCategoryCard,
   CategoryTextBox,
-} from '../../src/components/units/menuCategory/MenuCategory.styles';
+} from "../../src/components/units/menuCategory/MenuCategory.styles";
 
 interface ShowCategoryState {
   signature: boolean;
@@ -69,53 +69,51 @@ export default function MenuPage() {
   return (
     <>
       <Wrapper>
-        <div style={{ width: '75%' }}>
+        <div style={{ width: "75%" }}>
           <LayoutHeader />
           <Contents>
-            <BackButton onClick={handleBack} />
-
-            <div>MenuPage</div>
-
+            {/* <BackButton onClick={handleBack} /> */}
+            <MenuBackButton onClick={handleBack} />
             <div>
               {showButtons && (
                 <>
                   <MenuCategoryContainer>
                     <MenuCategoryCard
-                      onClick={() => handleToggleCategory('signature')}
+                      onClick={() => handleToggleCategory("signature")}
                     >
-                      <img src='/images/category/signature.png' />
+                      <img src="/images/category/signature.png" />
                       <CategoryTextBox> Signature</CategoryTextBox>
                     </MenuCategoryCard>
                     <MenuCategoryCard
-                      onClick={() => handleToggleCategory('burgers')}
+                      onClick={() => handleToggleCategory("burgers")}
                     >
-                      <img src='/images/category/burger.png' />
+                      <img src="/images/category/burger.png" />
                       <CategoryTextBox>Burgers</CategoryTextBox>
                     </MenuCategoryCard>
                     <MenuCategoryCard
-                      onClick={() => handleToggleCategory('setMenu')}
+                      onClick={() => handleToggleCategory("setMenu")}
                     >
-                      <img src='/images/category/setMenu.png' />
+                      <img src="/images/category/setMenu.png" />
                       <CategoryTextBox>Set Menu</CategoryTextBox>
                     </MenuCategoryCard>
                   </MenuCategoryContainer>
                   <MenuCategoryContainer>
                     <MenuCategoryCard
-                      onClick={() => handleToggleCategory('sideMenu')}
+                      onClick={() => handleToggleCategory("sideMenu")}
                     >
-                      <img src='/images/category/sideMenu.png' />
+                      <img src="/images/category/sideMenu.png" />
                       <CategoryTextBox>Side Menu</CategoryTextBox>
                     </MenuCategoryCard>
                     <MenuCategoryCard
-                      onClick={() => handleToggleCategory('drink')}
+                      onClick={() => handleToggleCategory("drink")}
                     >
-                      <img src='/images/category/drink.png' />
+                      <img src="/images/category/drink.png" />
                       <CategoryTextBox>Drink</CategoryTextBox>
                     </MenuCategoryCard>
                     <MenuCategoryCard
-                      onClick={() => handleToggleCategory('desserts')}
+                      onClick={() => handleToggleCategory("desserts")}
                     >
-                      <img src='/images/category/desserts.png' />
+                      <img src="/images/category/desserts.png" />
                       <CategoryTextBox>Desserts</CategoryTextBox>
                     </MenuCategoryCard>
                   </MenuCategoryContainer>
@@ -130,7 +128,7 @@ export default function MenuPage() {
             </div>
           </Contents>
         </div>
-        <div style={{ width: '25%' }}>
+        <div style={{ width: "25%" }}>
           <CartList />
         </div>
       </Wrapper>

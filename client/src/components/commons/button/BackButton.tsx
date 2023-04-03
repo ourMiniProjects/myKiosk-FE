@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { TbArrowBackUp } from "react-icons/tb";
 
 interface BackButtonProps {
   onClick?: () => void;
@@ -18,7 +19,7 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
     <>
       <StButtonContainer>
         <StBackButton onClick={onClickBackButton}>
-          <img src='/images/back.png' />
+          <TbArrowBackUp />
         </StBackButton>
       </StButtonContainer>
     </>
@@ -31,9 +32,7 @@ const StButtonContainer = styled.div`
   display: flex;
   width: 95%;
   justify-content: end;
-  /* margin-right: 20px; */
-  margin-top: -10px;
-  /* background-color: aquamarine; */
+  /* background-color: #7f8eff; */
 `;
 
 const StBackButton = styled.div`
@@ -47,6 +46,8 @@ const StBackButton = styled.div`
   box-shadow: 5px 5px 10px #bebebe, 5px 5px 5px #ffffff;
   border: solid 1px #eaeaea;
   border-radius: 10px;
+  font-size: 24pt;
+  color: #505050;
   cursor: pointer;
   :hover {
     background-color: #f7ce5ccf;
