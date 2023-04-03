@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // CartMenu.tsx
 import { useCart } from './CartContext';
 import { MenuItem } from '../../units/category/MenuItem';
@@ -15,6 +16,7 @@ interface CartItemProps {
   index: number;
 }
 
+// eslint-disable-next-line react/prop-types
 const CartItem: React.FC<CartItemProps> = ({ item, index }) => {
   const { incrementItem, decrementItem, removeItem } = useCart();
 

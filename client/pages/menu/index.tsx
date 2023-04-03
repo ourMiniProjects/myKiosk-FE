@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Signature from '../../src/components/units/category/Signature';
 import Burgers from '../../src/components/units/category/Burgers';
 import SetMenu from '../../src/components/units/category/SetMenu';
@@ -10,6 +10,11 @@ import BackButton from '../../src/components/commons/button/BackButton';
 import styled from 'styled-components';
 import LayoutHeader from '../../src/components/commons/layout/header/LayoutHeader.container';
 import { useCart } from '../../src/components/commons/cart/CartContext';
+import {
+  MenuCategoryContainer,
+  MenuCategoryCard,
+  CategoryTextBox,
+} from '../../src/components/units/menuCategory/MenuCategory.styles';
 
 interface ShowCategoryState {
   signature: boolean;
@@ -70,27 +75,50 @@ export default function MenuPage() {
             <BackButton onClick={handleBack} />
 
             <div>MenuPage</div>
+
             <div>
               {showButtons && (
                 <>
-                  <button onClick={() => handleToggleCategory('signature')}>
-                    Signature
-                  </button>
-                  <button onClick={() => handleToggleCategory('burgers')}>
-                    Burgers
-                  </button>
-                  <button onClick={() => handleToggleCategory('setMenu')}>
-                    Set Menu
-                  </button>
-                  <button onClick={() => handleToggleCategory('sideMenu')}>
-                    Side Menu
-                  </button>
-                  <button onClick={() => handleToggleCategory('drink')}>
-                    Drink
-                  </button>
-                  <button onClick={() => handleToggleCategory('desserts')}>
-                    Desserts
-                  </button>
+                  <MenuCategoryContainer>
+                    <MenuCategoryCard
+                      onClick={() => handleToggleCategory('signature')}
+                    >
+                      <img src='/images/category/signature.png' />
+                      <CategoryTextBox> Signature</CategoryTextBox>
+                    </MenuCategoryCard>
+                    <MenuCategoryCard
+                      onClick={() => handleToggleCategory('burgers')}
+                    >
+                      <img src='/images/category/burger.png' />
+                      <CategoryTextBox>Burgers</CategoryTextBox>
+                    </MenuCategoryCard>
+                    <MenuCategoryCard
+                      onClick={() => handleToggleCategory('setMenu')}
+                    >
+                      <img src='/images/category/setMenu.png' />
+                      <CategoryTextBox>Set Menu</CategoryTextBox>
+                    </MenuCategoryCard>
+                  </MenuCategoryContainer>
+                  <MenuCategoryContainer>
+                    <MenuCategoryCard
+                      onClick={() => handleToggleCategory('sideMenu')}
+                    >
+                      <img src='/images/category/sideMenu.png' />
+                      <CategoryTextBox>Side Menu</CategoryTextBox>
+                    </MenuCategoryCard>
+                    <MenuCategoryCard
+                      onClick={() => handleToggleCategory('drink')}
+                    >
+                      <img src='/images/category/drink.png' />
+                      <CategoryTextBox>Drink</CategoryTextBox>
+                    </MenuCategoryCard>
+                    <MenuCategoryCard
+                      onClick={() => handleToggleCategory('desserts')}
+                    >
+                      <img src='/images/category/desserts.png' />
+                      <CategoryTextBox>Desserts</CategoryTextBox>
+                    </MenuCategoryCard>
+                  </MenuCategoryContainer>
                 </>
               )}
               {showCategory.signature && <Signature />}
