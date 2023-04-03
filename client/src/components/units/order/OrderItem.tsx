@@ -1,7 +1,7 @@
 // src/components/units/order/OrderItem.tsx
 import React from 'react';
-// import { OrderItemWrapper } from './OrderItem.styles';
-
+import { OrderItemWrapper,OrderItemImage,OrderItemInfo } from './OrderItem.styles';
+import { FaWonSign } from 'react-icons/fa';
 interface OrderItemProps {
   id: number;
   menuName: string;
@@ -18,13 +18,14 @@ const OrderItem: React.FC<OrderItemProps> = ({
   imageUrl,
 }) => {
   return (
-    <div key={id}>
-      <div src={imageUrl} alt={menuName} />
-      <div>{menuName}</div>
-      <div>{amount}</div>
-      <div> ${price}</div>
-      <div>: ${amount * price}</div>
-    </div>
+    <OrderItemWrapper key={id}>
+      <OrderItemImage src={imageUrl} alt={menuName} />
+      <OrderItemInfo>{menuName}</OrderItemInfo>
+      <OrderItemInfo>수량:{amount}</OrderItemInfo>
+      {/* <OrderItemInfo> ${price}</OrderItemInfo> */}
+      <OrderItemInfo> ￦{amount * price}</OrderItemInfo>
+    </OrderItemWrapper>
+    
   );
 };
 
