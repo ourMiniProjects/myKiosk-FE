@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 800px;
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
 `;
 
 export const SelectCard = styled.div`

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import BackButton from "../../src/components/commons/button/BackButton";
 import { Container, MembershipSelectCard } from "./membership-select.styles";
 
-export default function MembershipCheckPage() {
+export default function MembershipSelectPage() {
   const router = useRouter();
 
   const onClickMoveToLogin = async () => {

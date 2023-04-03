@@ -7,7 +7,7 @@ import {
   InputBox,
   SelectCard,
   SelectCardLogin,
-} from "./Login.styles";
+} from "./login.styles";
 
 export default function LoginPage() {
   const router = useRouter();

@@ -9,7 +9,7 @@ import {
   SelectCardSignup,
 } from "./signUp.styles";
 
-export default function signupPage() {
+export default function SignUpPage() {
   const router = useRouter();
 
   const onClickMoveToMenu = async () => {

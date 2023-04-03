@@ -1,19 +1,19 @@
-import { useRouter } from 'next/router';
-import BackButton from '../../src/components/commons/button/BackButton';
-import { useCart } from '../../src/components/commons/cart/CartContext';
-import OrderItem from '../../src/components/units/order/OrderItem';
+import { useRouter } from "next/router";
+import BackButton from "../../src/components/commons/button/BackButton";
+import { useCart } from "../../src/components/commons/cart/CartContext";
+import OrderItem from "../../src/components/units/order/OrderItem";
 import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
-} from './order-check.styles';
+} from "./order-check.styles";
 
-export default function CheckOrderPage() {
+export default function OrderCheckPage() {
   const router = useRouter();
   const { items } = useCart();
 
   const onClickMoveToOrderComplete = async () => {
-    await router.push('/order-complete');
+    await router.push("/order-complete");
   };
 
   const calculateTotalPrice = () => {

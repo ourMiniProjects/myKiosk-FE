@@ -2,8 +2,9 @@ import BackButton from "../../src/components/commons/button/BackButton";
 import Lottie from "react-lottie";
 import animationData from "../../src/components/commons/lotties/burger-preparing.json";
 import styled from "styled-components";
+import { useEffect } from "react";
 
-export default function CompleteOrderPage() {
+export default function OrderCompletePage() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -12,6 +13,13 @@ export default function CompleteOrderPage() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      window.location.href = "/";
+    }, 9000);
+  });
+
   return (
     <>
       <BackButton />
