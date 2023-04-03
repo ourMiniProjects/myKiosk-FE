@@ -1,15 +1,15 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useCart } from "../../commons/cart/CartContext";
-import { MenuItem } from "./MenuItem";
-import { CardWrapper2, MenuContainer } from "../../commons/card/MenuCard2";
-import styled from "styled-components";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useCart } from '../../commons/cart/CartContext';
+import { MenuItem } from './MenuItem';
+import { CardWrapper2, MenuContainer } from '../../commons/card/MenuCard2';
+import styled from 'styled-components';
 // import { CardWrapper, MenuContainer } from "../../commons/card/MenuCard";
 
 type MenuList = MenuItem[][];
 
 const fetchMenuList = async () => {
-  const response = await axios.get("http://localhost:3001/MenuList");
+  const response = await axios.get('http://localhost:3001/MenuList');
   const menuList = response.data as MenuList;
   return menuList;
 };
@@ -23,7 +23,7 @@ const Burgers = () => {
         const data = await fetchMenuList();
         setMenuList(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     })();
   }, []);
@@ -36,10 +36,10 @@ const Burgers = () => {
   };
 
   return (
-    <>
-      <MenuContainer>
-        {menuList.map((menuItems, index) => (
-          <div key={index}>
+    <div>
+      {menuList.map((menuItems, index) => (
+        <div key={index}>
+          <MenuContainer>
             {menuItems.map((menuItem) => (
               <CardWrapper2
                 key={menuItem.id}
@@ -51,10 +51,10 @@ const Burgers = () => {
                 <p>수량: {menuItem.amount}</p>
               </CardWrapper2>
             ))}
-          </div>
-        ))}
-      </MenuContainer>
-    </>
+          </MenuContainer>
+        </div>
+      ))}
+    </div>
   );
 };
 

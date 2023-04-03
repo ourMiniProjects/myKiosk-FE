@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface BackButtonProps {
   onClick?: () => void;
 }
 
+// eslint-disable-next-line react/prop-types
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
   const onClickBackButton = () => {
     if (onClick) {
@@ -17,7 +18,7 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
     <>
       <StButtonContainer>
         <StBackButton onClick={onClickBackButton}>
-          <img src="/images/back.png" />
+          <img src='/images/back.png' />
         </StBackButton>
       </StButtonContainer>
     </>
