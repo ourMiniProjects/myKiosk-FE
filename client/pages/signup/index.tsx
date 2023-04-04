@@ -1,8 +1,6 @@
 import { Input } from 'antd';
-
 import NumberPad from '../../src/components/commons/numberpad/NumberPad';
 import { useState } from 'react';
-
 import {
   Container,
   ImageBox,
