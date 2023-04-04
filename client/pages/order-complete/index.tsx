@@ -1,7 +1,7 @@
+import { useEffect } from "react";
+import styled from "styled-components";
 import Lottie from "react-lottie";
 import animationData from "../../src/components/commons/lotties/burger-preparing.json";
-import styled from "styled-components";
-import { useEffect } from "react";
 
 export default function OrderCompletePage() {
   const defaultOptions = {
