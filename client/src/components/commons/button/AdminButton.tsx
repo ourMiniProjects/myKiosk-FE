@@ -8,6 +8,7 @@ export default function AdminButton() {
   const onClickMoveToAdmin = () => {
     void router.push("/admin");
   };
+
   return (
     <>
       <StButtonContainer>
@@ -22,9 +23,7 @@ export default function AdminButton() {
 const StButtonContainer = styled.div`
   display: flex;
   width: 100px;
-  /* margin-left: 84%; */
   justify-content: end;
-  /* margin-top: -57px; */
   /* background-color: aquamarine; */
 `;
 

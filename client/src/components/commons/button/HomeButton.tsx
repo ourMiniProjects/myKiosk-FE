@@ -1,21 +1,20 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
-import { TbArrowBackUp } from "react-icons/tb";
+import { BiHome } from "react-icons/bi";
 
-interface Props {
-  onClick: () => void;
-}
+export default function HomeButton() {
+  const router = useRouter();
 
-export default function MenuBackButton({ onClick }: Props) {
-  const handleClick = () => {
-    onClick();
+  const onClickMoveToHome = () => {
+    void router.push("/");
   };
 
   return (
     <>
       <StButtonContainer>
-        <StBackButton onClick={handleClick}>
-          <TbArrowBackUp />
-        </StBackButton>
+        <StHomeButton onClick={onClickMoveToHome}>
+          <BiHome />
+        </StHomeButton>
       </StButtonContainer>
     </>
   );
@@ -23,14 +22,12 @@ export default function MenuBackButton({ onClick }: Props) {
 
 const StButtonContainer = styled.div`
   display: flex;
-  width: 95%;
+  width: 100px;
   justify-content: end;
-  padding-bottom: 10px;
-  margin-top: -70px;
-  /* background-color: aliceblue; */
+  /* background-color: aquamarine; */
 `;
 
-const StBackButton = styled.div`
+const StHomeButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

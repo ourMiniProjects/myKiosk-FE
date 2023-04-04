@@ -4,6 +4,7 @@ import LayoutHeaderUI from "./LayoutHeader.presenter";
 export interface ILayoutHeaderProps {
   onClickLogo: () => void;
   onClickMoveToAdmin: () => void;
+  onClickMoveToHome: () => void;
 }
 
 export default function LayoutHeader() {
@@ -16,11 +17,17 @@ export default function LayoutHeader() {
   const onClickMoveToAdmin = () => {
     void router.push("/admin");
   };
+
+  const onClickMoveToHome = () => {
+    void router.push("/");
+  };
+
   return (
     <>
       <LayoutHeaderUI
         onClickLogo={onClickLogo}
         onClickMoveToAdmin={onClickMoveToAdmin}
+        onClickMoveToHome={onClickMoveToHome}
       />
     </>
   );
