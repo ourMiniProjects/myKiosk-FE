@@ -1,7 +1,7 @@
-import Lottie from "react-lottie";
-import animationData from "../../src/components/commons/lotties/burger-preparing.json";
-import styled from "styled-components";
-import { useEffect } from "react";
+import Lottie from 'react-lottie';
+import animationData from '../../src/components/commons/lotties/burger-preparing.json';
+import styled from 'styled-components';
+import { useEffect } from 'react';
 
 export default function OrderCompletePage() {
   const defaultOptions = {
@@ -9,13 +9,13 @@ export default function OrderCompletePage() {
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = '/';
     }, 9000);
   });
 

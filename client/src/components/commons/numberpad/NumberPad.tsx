@@ -1,6 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 export default function NumberPad() {
+  const router = useRouter();
+
+  const onClickMoveToMenu = async () => {
+    await router.push('/menu');
+  };
+
   return (
     <>
       <Calculator>
@@ -17,7 +24,7 @@ export default function NumberPad() {
         </Buttons>
         <LoginButtonBox>
           <ZeroButton>0</ZeroButton>
-          <LoginButton>LOGIN</LoginButton>
+          <LoginButton onClick={onClickMoveToMenu}>LOGIN</LoginButton>
         </LoginButtonBox>
       </Calculator>
     </>
