@@ -1,32 +1,38 @@
-import { Input } from "antd";
-import { useRouter } from "next/router";
-import NumberPad from "../../src/components/commons/numberpad/NumberPad";
+import { Input } from 'antd';
+
+import NumberPad from '../../src/components/commons/numberpad/NumberPad';
+import { useState } from 'react';
+
 import {
   Container,
   ImageBox,
   InputBox,
   SelectCardSignup,
-} from "./signUp.styles";
+} from './signUp.styles';
 
 export default function SignUpPage() {
-  const router = useRouter();
+  const [inputValue, setInputValue] = useState('');
 
-  const onClickMoveToMenu = async () => {
-    await router.push("/menu");
+  const handleNumberPadClick = (value: string) => {
+    setInputValue(inputValue + value);
   };
 
   return (
     <>
       <Container>
-        <SelectCardSignup onClick={onClickMoveToMenu}>
-          <img style={{ marginTop: "15px" }} src="/images/joinUs-title.png" />
+        <SelectCardSignup>
+          <img style={{ marginTop: '15px' }} src='/images/joinUs-title.png' />
           <InputBox>
-            <Input size="large" placeholder="전화번호를 입력해주세요." />
+            <Input
+              size='large'
+              placeholder='전화번호를 입력해주세요.'
+              value={inputValue}
+            />
           </InputBox>
-          <NumberPad />
+          <NumberPad onClick={handleNumberPadClick} />
         </SelectCardSignup>
         <ImageBox>
-          <img src="/images/welcome.png" />
+          <img src='/images/welcome.png' />
         </ImageBox>
       </Container>
     </>

@@ -7,12 +7,19 @@ import {
   SelectCard,
   SelectCardLogin,
 } from './login.styles';
+import { useState } from 'react';
 
 export default function LoginPage() {
   const router = useRouter();
 
   const onClickMoveToSignup = async () => {
     await router.push('/signup');
+  };
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleNumberPadClick = (value: string) => {
+    setInputValue(inputValue + value);
   };
 
   return (
@@ -25,9 +32,13 @@ export default function LoginPage() {
         <SelectCardLogin>
           <img style={{ marginTop: '15px' }} src='/images/login-title.png' />
           <InputBox>
-            <Input size='large' placeholder='전화번호를 입력해주세요.' />
+            <Input
+              size='large'
+              placeholder='전화번호를 입력해주세요.'
+              value={inputValue}
+            />
           </InputBox>
-          <NumberPad />
+          <NumberPad onClick={handleNumberPadClick} />
         </SelectCardLogin>
       </Container>
     </>

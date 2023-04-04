@@ -1,31 +1,42 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
-export default function NumberPad() {
+interface NumberPadProps {
+  onClick: (value: string) => void;
+}
+
+export default function NumberPad({ onClick }: NumberPadProps) {
   const router = useRouter();
 
   const onClickMoveToMenu = async () => {
     await router.push('/menu');
   };
 
+  const handleButtonClick = (value: string) => {
+    onClick(value);
+  };
+
   return (
     <>
       <Calculator>
         <Buttons>
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
+          <Button onClick={() => handleButtonClick('1')}>1</Button>
+          <Button onClick={() => handleButtonClick('2')}>2</Button>
+          <Button onClick={() => handleButtonClick('3')}>3</Button>
+          <Button onClick={() => handleButtonClick('4')}>4</Button>
+          <Button onClick={() => handleButtonClick('5')}>5</Button>
+          <Button onClick={() => handleButtonClick('6')}>6</Button>
+          <Button onClick={() => handleButtonClick('7')}>7</Button>
+          <Button onClick={() => handleButtonClick('8')}>8</Button>
+          <Button onClick={() => handleButtonClick('9')}>9</Button>
+          <Button onClick={() => handleButtonClick('0')}>0</Button>
+          <Button onClick={() => handleButtonClick('9')}>X</Button>
+          <Button onClick={onClickMoveToMenu}>LOGIN</Button>
         </Buttons>
-        <LoginButtonBox>
-          <ZeroButton>0</ZeroButton>
+        {/* <LoginButtonBox>
+          <ZeroButton onClick={() => handleButtonClick('0')}>0</ZeroButton>
           <LoginButton onClick={onClickMoveToMenu}>LOGIN</LoginButton>
-        </LoginButtonBox>
+        </LoginButtonBox> */}
       </Calculator>
     </>
   );
