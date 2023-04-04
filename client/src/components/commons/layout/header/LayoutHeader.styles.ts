@@ -28,9 +28,3 @@ export const InnerLogo = styled.div`
   color: #2e2e2e;
   cursor: pointer;
 `;
-
-export const InnerButton = styled.span`
-  margin: 10px;
-  color: #2e2e2e;
-  cursor: pointer;
-`;

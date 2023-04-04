@@ -1,20 +1,20 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { RiUserSettingsLine } from "react-icons/ri";
+import { BiHome } from "react-icons/bi";
 
-export default function AdminButton() {
+export default function HomeButton() {
   const router = useRouter();
 
-  const onClickMoveToAdmin = () => {
-    void router.push("/admin");
+  const onClickMoveToHome = () => {
+    void router.push("/");
   };
 
   return (
     <>
       <StButtonContainer>
-        <StAdminButton onClick={onClickMoveToAdmin}>
-          <RiUserSettingsLine />
-        </StAdminButton>
+        <StHomeButton onClick={onClickMoveToHome}>
+          <BiHome />
+        </StHomeButton>
       </StButtonContainer>
     </>
   );
@@ -27,7 +27,7 @@ const StButtonContainer = styled.div`
   /* background-color: aquamarine; */
 `;
 
-const StAdminButton = styled.div`
+const StHomeButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
