@@ -14,7 +14,11 @@ export default function SignUpPage() {
   const [inputValue, setInputValue] = useState('');
 
   const handleNumberPadClick = (value: string) => {
-    setInputValue(inputValue + value);
+    if (value === 'X') {
+      setInputValue(inputValue.slice(0, -1));
+    } else {
+      setInputValue(inputValue + value);
+    }
   };
 
   return (
