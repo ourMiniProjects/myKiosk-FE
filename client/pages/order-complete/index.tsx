@@ -18,7 +18,7 @@ export default function OrderCompletePage() {
       window.location.href = '/';
     }, 9000);
   });
-
+  // ....
   return (
     <>
       <Wrapper>
