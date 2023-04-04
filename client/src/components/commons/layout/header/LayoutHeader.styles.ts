@@ -5,8 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  /* flex-direction: row; */
+  padding: 20px;
   /* background-color: #f7cc5c; // 임시 */
 `;
 
@@ -17,14 +16,13 @@ export const InnerWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
 `;
 
-export const InnerLogo = styled.div`
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "live";
-  font-style: italic;
-  color: #2e2e2e;
-  cursor: pointer;
-`;
+// export const InnerLogo = styled.div`
+//   /* font-size: 30px; */
+//   /* font-weight: bold; */
+//   /* font-family: "live"; */
+//   /* font-style: italic; */
+//   /* color: #2e2e2e; */
+//   cursor: pointer;
+// `;

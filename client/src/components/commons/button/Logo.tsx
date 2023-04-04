@@ -1,23 +1,41 @@
-import React from 'react';
+import { useRouter } from "next/router";
+import styled from "styled-components";
 
-interface BackButtonProps {
-  onClick?: () => void;
-}
+export default function LogoButton() {
+  const router = useRouter();
 
-const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-    } else {
-      window.history.back();
-    }
+  const onClickMoveToHome = () => {
+    void router.push("/");
   };
 
   return (
-    <button onClick={handleClick} style={{ cursor: 'pointer' }}>
-      뒤로가기버튼..
-    </button>
+    <>
+      <StButtonContainer>
+        <StLogoButton onClick={onClickMoveToHome}>
+          <img src="/images/logo2.png" />
+        </StLogoButton>
+      </StButtonContainer>
+    </>
   );
-};
+}
 
-export default BackButton;
+const StButtonContainer = styled.div`
+  display: flex;
+  width: 250px;
+  justify-content: center;
+  padding-top: 15px;
+  /* background-color: aquamarine; */
+`;
+
+const StLogoButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 25px;
+  padding: 10px;
+  cursor: pointer;
+  img {
+    width: 300%;
+  }
+`;

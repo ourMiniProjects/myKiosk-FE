@@ -26,6 +26,7 @@ const StButtonContainer = styled.div`
   width: 95%;
   justify-content: end;
   padding-bottom: 10px;
+  margin-top: -70px;
   /* background-color: aliceblue; */
 `;
 
