@@ -1,11 +1,5 @@
 import { useRouter } from "next/router";
-import {
-  AdminButton,
-  Container,
-  MembershipSelectCard,
-  StButtonContainer,
-} from "./membership-select.styles";
-import { RiUserSettingsLine } from "react-icons/ri";
+import { Container, MembershipSelectCard } from "./membership-select.styles";
 
 export default function MembershipSelectPage() {
   const router = useRouter();
@@ -18,17 +12,8 @@ export default function MembershipSelectPage() {
     await router.push("/menu");
   };
 
-  const onClickMoveToAdmin = () => {
-    void router.push("/admin");
-  };
-
   return (
     <>
-      <StButtonContainer>
-        <AdminButton onClick={onClickMoveToAdmin}>
-          <RiUserSettingsLine />
-        </AdminButton>
-      </StButtonContainer>
       <Container>
         <MembershipSelectCard onClick={onClickMoveToLogin}>
           <img src="/images/select-member.png" />

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import AdminButton from "../../button/AdminButton";
 import BackButton from "../../button/BackButton";
 import { ILayoutHeaderProps } from "./LayoutHeader.container";
 import {
@@ -15,11 +16,18 @@ export default function LayoutHeaderUI(props: ILayoutHeaderProps) {
     router.pathname === "/menu" ||
     router.pathname === "/order-complete";
 
+  const isAdminPage = router.pathname === "/membership-select";
+
   return (
     <Wrapper>
       <InnerWrapper>
         <InnerLogo onClick={props.onClickLogo}>LOGO</InnerLogo>
         {isHiddenBackButton || <BackButton />}
+        {isAdminPage && (
+          <div onClick={props.onClickMoveToAdmin}>
+            <AdminButton />
+          </div>
+        )}
       </InnerWrapper>
     </Wrapper>
   );
