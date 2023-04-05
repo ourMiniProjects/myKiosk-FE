@@ -1,44 +1,42 @@
-import styled from 'styled-components';
-import { BsCart3 } from 'react-icons/bs';
-import { FiPlus } from 'react-icons/fi';
-import { FiMinus } from 'react-icons/fi';
+import styled from "styled-components";
+import { BsCart3 } from "react-icons/bs";
+import { TiDelete } from "react-icons/ti";
 
 export const CartWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 75%;
+  align-items: center;
+  width: 80%;
   height: 780px;
-  /* height: 40%; */
-  padding: 60px 40px 80px 40px;
-  margin: 10px;
-  margin-bottom: 100px;
+  padding: 50px 40px 40px 40px;
+  margin: 30px 10px 150px -20px;
   color: black;
   border-radius: 20px;
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
   background-color: #f7cc5c;
-  overflow: scroll;
 `;
 
-export const CartSelectedItems = styled.div`
+export const CartListBox = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #ffffff40;
-  border-radius: 20px;
-  width: 70%;
-  /* box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff; */
+  flex-direction: column;
+  width: 100%;
+  height: 700px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: black;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
-
-  padding: 20px;
-  margin: 20px 15px 20px 15px;
+  /* background-color: #ffffff; */
 `;
 
 export const Title = styled.div`
   display: flex;
-  width: 350px;
-  /* padding: 10px; */
-  font-size: 18pt;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16pt;
   font-weight: 600;
   letter-spacing: 1px;
   color: #252525;
@@ -49,27 +47,62 @@ export const CartIcon = styled(BsCart3)`
   margin-left: 20px;
 `;
 
-export const CartTotal = styled.div`
+export const CartSelectedItems = styled.div`
   display: flex;
-  /* position: absolute; */
   justify-content: center;
+  position: relative;
   align-items: center;
-  background-color: #2a2a2aa3;
-  border-radius: 20px;
-  /* box-shadow: 15px 15px 30px #fde791, -15px -15px 30px #fde791; */
+  background-color: #ffffff40;
+  border-radius: 15px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
-  width: 70%;
-  padding: 20px;
-  margin: 60px 15px 15px 15px;
-  font-size: 16pt;
-  letter-spacing: 1pt;
-  color: white;
+  padding: 10px 20px 10px 20px;
+  margin: 0px 5px 18px 5px;
+`;
+
+export const DeleteIcon = styled(TiDelete)`
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  font-size: 20pt;
+  color: #111111b0;
+  cursor: pointer;
+`;
+
+export const MenuImage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -5px 10px 0px 0px;
+  img {
+    width: 130%;
+  }
+`;
+
+export const MenuName = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 10px 10px 10px 5px;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #303030;
+`;
+
+export const MenuPrice = styled.div`
+  display: flex;
+  justify-content: end;
+  width: 80px;
+  margin-left: 50px;
+  font-size: 13pt;
+  font-weight: 600;
+  color: #303030;
 `;
 
 export const CountButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 120%;
+  align-items: center;
+  margin-bottom: 10px;
 `;
 
 export const CountButton = styled.div`
@@ -77,11 +110,54 @@ export const CountButton = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #ffffff70;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 10px;
   height: 10px;
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
-  margin: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 3px;
   padding: 10px;
+  font-size: 14pt;
+  color: #303030;
+  cursor: pointer;
+`;
+
+export const AmoutBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffffd5;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 3px;
+  padding: 10px;
+`;
+
+export const CartTotalPrice = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  padding: 20px;
+  font-size: 16pt;
+  font-weight: 500;
+  letter-spacing: 0.5pt;
+  color: #202020;
+  /* color: white; */
+`;
+
+export const CartOrderButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2a2aa3;
+  border-radius: 20px;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  width: 85%;
+  padding: 20px;
+  font-size: 16pt;
+  letter-spacing: 1pt;
+  color: white;
   cursor: pointer;
 `;

@@ -19,7 +19,7 @@ export const StStartPageUI = styled.div`
       content: " ";
       display: block;
       width: 100%;
-      height: 100%;
+      height: 95%;
       background-color: #ee9933;
       transform: rotateZ(5deg);
     }
@@ -28,6 +28,8 @@ export const StStartPageUI = styled.div`
       width: 100%;
       text-align: center;
       font-size: 16pt;
+      font-family: "myfont";
+      letter-spacing: 1pt;
       color: #898989;
     }
 
@@ -41,7 +43,7 @@ export const StStartPageUI = styled.div`
     .price {
       font-weight: bold;
       font-size: 40pt;
-      /* font-family: "FlyingBird"; */
+      font-family: "myfont";
       color: #ee9933;
     }
 
@@ -52,7 +54,7 @@ export const StStartPageUI = styled.div`
     .content {
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 95%;
       background-color: white;
       justify-content: center;
       display: flex;
