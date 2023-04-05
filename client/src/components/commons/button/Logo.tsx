@@ -23,7 +23,7 @@ const StButtonContainer = styled.div`
   display: flex;
   width: 250px;
   justify-content: center;
-  padding-top: 15px;
+  padding-top: 5px;
   /* background-color: aquamarine; */
 `;
 
