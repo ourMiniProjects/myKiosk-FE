@@ -9,7 +9,7 @@ import styled from 'styled-components';
 type MenuList = MenuItem[][];
 
 const fetchMenuList = async () => {
-  const response = await axios.get('http://localhost:3001/MenuList');
+  const response = await axios.get('http://localhost:3001/Burgers');
   const menuList = response.data as MenuList;
   return menuList;
 };
@@ -21,7 +21,11 @@ const Burgers = () => {
     void (async () => {
       try {
         const data = await fetchMenuList();
-        setMenuList(data);
+        // 각 메뉴 항목에 대해 amount를 1로 설정합니다.
+        const updatedData = data.map((menuItems) =>
+          menuItems.map((menuItem) => ({ ...menuItem, amount: 1 }))
+        );
+        setMenuList(updatedData);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
