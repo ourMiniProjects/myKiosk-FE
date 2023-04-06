@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import { useCart } from "./CartContext";
-import CartMenu from "./CartMenu";
+import { useRouter } from 'next/router';
+import { useCart } from './CartContext';
+import CartMenu from './CartMenu';
 import {
   CartIcon,
   CartListBox,
@@ -8,20 +8,24 @@ import {
   CartTotalPrice,
   CartWrapper,
   Title,
-} from "./CartList.styles";
+} from './CartList.styles';
 
 export default function CartListUI() {
   const router = useRouter();
 
   const onClickMoveToOrder = () => {
-    void router.push("/order-check");
+    void router.push('/order-check');
   };
 
-  const { items } = useCart();
+  const { items, clearCart } = useCart();
   const totalPrice = items.reduce(
     (sum, item) => sum + item.price * item.amount,
     0
   );
+
+  const handleRemoveAllItems = () => {
+    clearCart();
+  };
 
   return (
     <>
@@ -29,6 +33,7 @@ export default function CartListUI() {
         <Title>
           <CartIcon />
           장바구니
+          <button onClick={handleRemoveAllItems}>전체 삭제</button>
         </Title>
         <CartListBox>
           <CartMenu />
