@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 interface NumberPadProps {
-  onClick: (value: string) => void;
+  onClick: (value: string) => string;
   inputValue: string;
 }
 
@@ -17,7 +17,7 @@ export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
   const handleButtonClick = (value: string) => {
     const newInputValue = onClick(value);
     const inputLength = newInputValue.length;
-    if (inputLength === 4 || inputLength === 9) {
+    if ((inputLength === 4 || inputLength === 9) && value !== 'X') {
       onClick('-');
     }
   };
@@ -25,10 +25,10 @@ export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
   // 키보드 이벤트 핸들러 추가
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key >= '0' && e.key <= '9') {
-        const newInputValue = onClick(e.key);
-        const inputLength = newInputValue.length;
-        if (inputLength === 4 || inputLength === 9) {
+      const newInputValue = onClick(e.key);
+      const inputLength = newInputValue.length;
+      if (e.key >= '0' && e.key <= '9' && inputLength < 13) {
+        if ((inputLength === 4 || inputLength === 9) && e.key !== 'Backspace') {
           onClick('-');
         }
       } else if (e.key === 'Backspace') {
@@ -42,7 +42,7 @@ export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClick, onClickMoveToMenu, inputValue]);
+  }, [onClick, onClickMoveToMenu]);
 
   return (
     <>
