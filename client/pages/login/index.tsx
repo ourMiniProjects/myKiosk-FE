@@ -46,7 +46,12 @@ export default function LoginPage() {
               value={inputValue}
             />
           </InputBox>
-          <NumberPad onClick={handleNumberPadClick} />
+
+          <NumberPad
+            onClick={handleNumberPadClick}
+            inputValue={inputValue}
+            mode='login'
+          />
         </SelectCardLogin>
       </Container>
     </>

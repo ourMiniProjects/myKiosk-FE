@@ -2,12 +2,19 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
+// NumberPad.tsx
+
 interface NumberPadProps {
   onClick: (value: string) => string;
   inputValue: string;
+  mode: 'login' | 'signup'; // mode prop 추가
 }
 
-export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
+export default function NumberPad({
+  onClick,
+  inputValue,
+  mode,
+}: NumberPadProps) {
   const router = useRouter();
 
   const onClickMoveToMenu = async () => {
@@ -60,7 +67,9 @@ export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
           <Button onClick={() => handleButtonClick('0')}>0</Button>
           <Button onClick={() => handleButtonClick('X')}>X</Button>
           {/* X 버튼 수정시... LoginPage의 handleNumberPadClick함수 조건도 바꿔줘야함..  */}
-          <Button onClick={onClickMoveToMenu}>LOGIN</Button>
+          <Button onClick={onClickMoveToMenu}>
+            {mode === 'login' ? 'LOGIN' : 'SIGNUP'}
+          </Button>
         </Buttons>
         {/* <LoginButtonBox>
           <ZeroButton onClick={() => handleButtonClick('0')}>0</ZeroButton>
