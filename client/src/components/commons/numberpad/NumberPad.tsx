@@ -24,7 +24,7 @@ export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
 
   // 키보드 이벤트 핸들러 추가
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = async (e: KeyboardEvent) => {
       const newInputValue = onClick(e.key);
       const inputLength = newInputValue.length;
       if (e.key >= '0' && e.key <= '9' && inputLength < 13) {
@@ -34,7 +34,7 @@ export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
       } else if (e.key === 'Backspace') {
         onClick('X');
       } else if (e.key.toLowerCase() === 'enter') {
-        onClickMoveToMenu();
+        await onClickMoveToMenu();
       }
     };
 
