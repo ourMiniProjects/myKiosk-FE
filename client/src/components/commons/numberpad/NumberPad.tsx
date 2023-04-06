@@ -22,7 +22,7 @@ export default function NumberPad({ onClick }: NumberPadProps) {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key >= '0' && e.key <= '9') {
         onClick(e.key);
-      } else if (e.key.toLowerCase() === 'Backspace') {
+      } else if (e.key === 'Backspace') {
         onClick('X');
       } else if (e.key.toLowerCase() === 'enter') {
         onClickMoveToMenu();
