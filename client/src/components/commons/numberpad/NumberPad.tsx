@@ -4,9 +4,10 @@ import { useEffect } from 'react';
 
 interface NumberPadProps {
   onClick: (value: string) => void;
+  inputValue: string;
 }
 
-export default function NumberPad({ onClick }: NumberPadProps) {
+export default function NumberPad({ onClick, inputValue }: NumberPadProps) {
   const router = useRouter();
 
   const onClickMoveToMenu = async () => {
@@ -14,14 +15,22 @@ export default function NumberPad({ onClick }: NumberPadProps) {
   };
 
   const handleButtonClick = (value: string) => {
-    onClick(value);
+    const newInputValue = onClick(value);
+    const inputLength = newInputValue.length;
+    if (inputLength === 4 || inputLength === 9) {
+      onClick('-');
+    }
   };
 
   // 키보드 이벤트 핸들러 추가
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key >= '0' && e.key <= '9') {
-        onClick(e.key);
+        const newInputValue = onClick(e.key);
+        const inputLength = newInputValue.length;
+        if (inputLength === 4 || inputLength === 9) {
+          onClick('-');
+        }
       } else if (e.key === 'Backspace') {
         onClick('X');
       } else if (e.key.toLowerCase() === 'enter') {
@@ -33,7 +42,7 @@ export default function NumberPad({ onClick }: NumberPadProps) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClick, onClickMoveToMenu]);
+  }, [onClick, onClickMoveToMenu, inputValue]);
 
   return (
     <>
