@@ -1,0 +1,98 @@
+{
+  "Beverage": [
+    {
+      "id": 1,
+      "menuName": "콜라1",
+      "price": 1000,
+      "imageUrl": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": 2,
+      "menuName": "콜라2",
+      "price": 2000,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlxre5tHI4YMiwPs2sI5mycR39AgIzMxIZzQ&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "menuName": "콜라3",
+      "price": 3000,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ijesb3gpbPL04CdgdESCp3u0lGRq4MkCLA&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "menuName": "콜라4",
+      "price": 4000,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnkJd91Vb-urJ5zFqKL8RPC2fOXIvFDnJoPA&usqp=CAU"
+    }
+  ],
+
+  "Burgers": [
+    {
+      "id": 11,
+      "menuName": "야채잔뜩 버거2",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    },
+    {
+      "id": 12,
+      "menuName": "야채잔뜩 버거3",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    },
+
+    {
+      "id": 6,
+      "menuName": "그냥버거",
+      "price": 1800,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583728101061.png"
+    },
+    {
+      "id": 5,
+      "menuName": "1955버거",
+      "price": 5200,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1599119647587.png"
+    },
+    {
+      "id": 11,
+      "menuName": "야채잔뜩 버거2",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    },
+    {
+      "id": 12,
+      "menuName": "야채잔뜩 버거3",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    },
+    {
+      "id": 8,
+      "menuName": "벌써설날인버거",
+      "price": 5200,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727918778.png"
+    },
+    {
+      "id": 10,
+      "menuName": "야채잔뜩 버거1",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    },
+    {
+      "id": 11,
+      "menuName": "야채잔뜩 버거2",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    },
+    {
+      "id": 7,
+      "menuName": "집에가고싶은버거",
+      "price": 2300,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583728282358.png"
+    },
+    {
+      "id": 11,
+      "menuName": "야채잔뜩 버거2",
+      "price": 4500,
+      "imageUrl": "https://www.mcdonalds.co.kr/upload/product/pcfile/1583727707216.png"
+    }
+  ]
+}
