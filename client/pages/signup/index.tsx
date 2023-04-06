@@ -10,13 +10,17 @@ import {
 
 export default function SignUpPage() {
   const [inputValue, setInputValue] = useState('');
+  const handleNumberPadClick = (value: string): string => {
+    let newInputValue = '';
 
-  const handleNumberPadClick = (value: string) => {
     if (value === 'X') {
-      setInputValue(inputValue.slice(0, -1));
+      newInputValue = inputValue.slice(0, -1);
     } else {
-      setInputValue(inputValue + value);
+      newInputValue = inputValue + value;
     }
+
+    setInputValue(newInputValue);
+    return newInputValue;
   };
 
   return (
