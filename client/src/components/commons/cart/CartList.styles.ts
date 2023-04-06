@@ -57,7 +57,15 @@ export const CartSelectedItems = styled.div`
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
   padding: 10px 20px 10px 20px;
   margin: 0px 5px 18px 5px;
+  width: 85%;
 `;
+
+// export const CartItemWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+//   width: 90%;
+//   background-color: #ffffff40;
+// `;
 
 export const DeleteIcon = styled(TiDelete)`
   position: absolute;
@@ -72,9 +80,9 @@ export const MenuImage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -5px 10px 0px 0px;
+  margin: -5px 0px 0px 10px;
   img {
-    width: 130%;
+    width: 100px;
   }
 `;
 
@@ -82,7 +90,8 @@ export const MenuName = styled.div`
   display: flex;
   align-items: center;
   margin: 10px 10px 10px 5px;
-  font-size: 14pt;
+  /* font-size: 14pt; */
+  font-size: 110%;
   font-weight: 700;
   letter-spacing: 1px;
   color: #303030;
@@ -92,7 +101,7 @@ export const MenuPrice = styled.div`
   display: flex;
   justify-content: end;
   width: 80px;
-  margin-left: 50px;
+  margin: 0px 15px 0px 30px;
   font-size: 13pt;
   font-weight: 600;
   color: #303030;
@@ -103,6 +112,9 @@ export const CountButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  width: 90%;
+
+  /* background-color: aliceblue; */
 `;
 
 export const CountButton = styled.div`
