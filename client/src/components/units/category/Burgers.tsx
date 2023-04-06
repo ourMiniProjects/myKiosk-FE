@@ -6,7 +6,7 @@ import { CardWrapper2, MenuContainer } from '../../commons/card/MenuCard2';
 import styled from 'styled-components';
 // import { CardWrapper, MenuContainer } from "../../commons/card/MenuCard";
 
-type MenuList = MenuItem[][];
+type MenuList = MenuItem[];
 
 const fetchMenuList = async () => {
   const response = await axios.get('http://localhost:3001/Burgers');
@@ -22,9 +22,10 @@ const Burgers = () => {
       try {
         const data = await fetchMenuList();
         // 각 메뉴 항목에 대해 amount를 1로 설정합니다.
-        const updatedData = data.map((menuItems) =>
-          menuItems.map((menuItem) => ({ ...menuItem, amount: 1 }))
-        );
+        const updatedData = data.map((menuItem) => ({
+          ...menuItem,
+          amount: 1,
+        }));
         setMenuList(updatedData);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -41,23 +42,19 @@ const Burgers = () => {
 
   return (
     <div>
-      {menuList.map((menuItems, index) => (
-        <div key={index}>
-          <MenuContainer>
-            {menuItems.map((menuItem) => (
-              <CardWrapper2
-                key={menuItem.id}
-                onClick={() => handleItemClick(menuItem)}
-              >
-                <img src={menuItem.imageUrl} alt={menuItem.menuName} />
-                <h4>{menuItem.menuName}</h4>
-                <p>{menuItem.price}원</p>
-                <p>수량: {menuItem.amount}</p>
-              </CardWrapper2>
-            ))}
-          </MenuContainer>
-        </div>
-      ))}
+      <MenuContainer>
+        {menuList.map((menuItem, index) => (
+          <CardWrapper2
+            key={menuItem.id}
+            onClick={() => handleItemClick(menuItem)}
+          >
+            <img src={menuItem.imageUrl} alt={menuItem.menuName} />
+            <h4>{menuItem.menuName}</h4>
+            <p>{menuItem.price}원</p>
+            <p>수량: {menuItem.amount}</p>
+          </CardWrapper2>
+        ))}
+      </MenuContainer>
     </div>
   );
 };
