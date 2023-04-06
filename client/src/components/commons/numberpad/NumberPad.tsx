@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface NumberPadProps {
   onClick: (value: string) => void;
@@ -15,6 +16,24 @@ export default function NumberPad({ onClick }: NumberPadProps) {
   const handleButtonClick = (value: string) => {
     onClick(value);
   };
+
+  // 키보드 이벤트 핸들러 추가
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key >= '0' && e.key <= '9') {
+        onClick(e.key);
+      } else if (e.key.toLowerCase() === 'Backspace') {
+        onClick('X');
+      } else if (e.key.toLowerCase() === 'enter') {
+        onClickMoveToMenu();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClick, onClickMoveToMenu]);
 
   return (
     <>
