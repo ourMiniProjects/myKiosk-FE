@@ -29,7 +29,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, index }) => {
           <S.CountButton onClick={() => incrementItem(item.id)}>
             +
           </S.CountButton>
-          <S.MenuPrice>{item.price * item.amount}원</S.MenuPrice>
+          <S.MenuPrice>₩ {item.price * item.amount}</S.MenuPrice>
         </S.CountButtonWrapper>
       </div>
       {/* </S.CartItemWrapper> */}

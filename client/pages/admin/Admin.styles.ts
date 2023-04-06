@@ -36,3 +36,11 @@ export const SelectCard = styled.div`
     background-color: #f7ce5ccf;
   }
 `;
+
+export const Wrapper2 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 200px 70px 200px;
+  /* color: #f9c336; */
+`;
