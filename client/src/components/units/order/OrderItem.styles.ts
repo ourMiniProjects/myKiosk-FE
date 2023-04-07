@@ -17,10 +17,16 @@ export const OrderItemWrapper = styled.div`
 
 export const OrderItemImage = styled.img`
   height: 100%;
+  width: 100px;
+  margin-left: 40px;
+
   object-fit: cover;
-  margin-right: 16px;
+  flex-shrink: 0;
 `;
 
 export const OrderItemInfo = styled.div`
-  margin-right: 16px;
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+  margin-left: 110px;
 `;

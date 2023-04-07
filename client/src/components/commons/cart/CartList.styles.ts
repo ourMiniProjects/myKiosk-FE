@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { BsCart3 } from "react-icons/bs";
-import { TiDelete } from "react-icons/ti";
+import styled from 'styled-components';
+import { BsCart3 } from 'react-icons/bs';
+import { TiDelete } from 'react-icons/ti';
 
 export const CartWrapper = styled.div`
   display: flex;
@@ -83,6 +83,9 @@ export const MenuImage = styled.div`
   margin: -5px 0px 0px 10px;
   img {
     width: 100px;
+
+    height: 70px; // 이미지의 최대 높이를 100픽셀로 설정
+    object-fit: cover; // 이미지의 가로 세로 비율을 유지하면서 전체 영역을 채움
   }
 `;
 
