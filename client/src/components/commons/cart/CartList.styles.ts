@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { BsCart3 } from 'react-icons/bs';
-import { TiDelete } from 'react-icons/ti';
+import styled from "styled-components";
+import { BsCart3 } from "react-icons/bs";
+import { TiDelete } from "react-icons/ti";
+import { MdRefresh } from "react-icons/md";
 
 export const CartWrapper = styled.div`
   display: flex;
@@ -32,10 +33,17 @@ export const CartListBox = styled.div`
   /* background-color: #ffffff; */
 `;
 
-export const Title = styled.div`
+export const TitleWapper = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
+`;
+
+export const Title = styled.div`
+  display: flex;
+  justify-content: left;
+  width: 100%;
   font-size: 16pt;
   font-weight: 600;
   letter-spacing: 1px;
@@ -45,6 +53,13 @@ export const Title = styled.div`
 export const CartIcon = styled(BsCart3)`
   margin-right: 10px;
   margin-left: 20px;
+`;
+
+export const DeleteAllIcon = styled(MdRefresh)`
+  margin: -5px 10px 0px 10px;
+  font-size: 24pt;
+  color: #111111b0;
+  cursor: pointer;
 `;
 
 export const CartSelectedItems = styled.div`
