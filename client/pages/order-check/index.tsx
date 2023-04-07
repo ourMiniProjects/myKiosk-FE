@@ -5,6 +5,7 @@ import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
+  OrderItemContainer,
 } from './order-check.styles';
 
 export default function OrderCheckPage() {
@@ -22,16 +23,18 @@ export default function OrderCheckPage() {
   return (
     <>
       <div>CheckOrderPage</div>
-      {items.map((item) => (
-        <OrderItem
-          key={item.id}
-          id={item.id}
-          menuName={item.menuName}
-          amount={item.amount}
-          price={item.price}
-          imageUrl={item.imageUrl}
-        />
-      ))}
+      <OrderItemContainer>
+        {items.map((item) => (
+          <OrderItem
+            key={item.id}
+            id={item.id}
+            menuName={item.menuName}
+            amount={item.amount}
+            price={item.price}
+            imageUrl={item.imageUrl}
+          />
+        ))}
+      </OrderItemContainer>
       <TotalPriceWrapper>
         <TotalPrice>
           Total: ${calculateTotalPrice().toLocaleString()}

@@ -14,6 +14,15 @@ export const TotalPriceWrapper = styled.div`
   margin-right: auto;
 `;
 
+export const OrderItemContainer = styled.div`
+  height: 600px; // 원하는 최대 높이 설정
+  overflow-y: auto; // 세로 스크롤 표시
+  margin-bottom: 20px; // 필요한 경우 하단 여백 추가
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
 export const TotalPrice = styled.h2`
   width: 75%;
   height: 50px;
