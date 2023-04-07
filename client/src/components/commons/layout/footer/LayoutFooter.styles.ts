@@ -1,7 +1,3 @@
-// ----------------------------------------------------------------------------------
-//  LayoutHeader.styles
-// ----------------------------------------------------------------------------------
-
 import styled from "@emotion/styled";
 import { AiFillFacebook } from "react-icons/ai";
 import { BsTwitter, BsYoutube } from "react-icons/bs";

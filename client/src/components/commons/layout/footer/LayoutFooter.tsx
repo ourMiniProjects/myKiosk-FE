@@ -1,7 +1,3 @@
-// ----------------------------------------------------------------------------------
-//  LayoutFooter
-// ----------------------------------------------------------------------------------
-
 import * as S from "./LayoutFooter.styles";
 
 export default function LayoutFooter() {
@@ -10,7 +6,6 @@ export default function LayoutFooter() {
       <S.Wrapper>
         <S.InnerWrapper>
           <S.FooterLeftBox>
-            {/* <h3 style={{ fontSize: "14pt" }}>BESELLER</h3> <br /> */}
             <S.Title>MyKiosk®</S.Title>
             <S.Text2>
               Introducing kiosks! By implementing kiosks, you can provide cost
@@ -29,7 +24,6 @@ export default function LayoutFooter() {
         <S.FooterRightBox>
           <S.TextBox>
             <S.Text1>PRODUCT</S.Text1>
-
             <S.Text1>SHOP</S.Text1>
             <S.Text1>CONTACT</S.Text1>
           </S.TextBox>
