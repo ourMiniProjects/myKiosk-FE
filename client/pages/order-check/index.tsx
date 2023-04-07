@@ -1,18 +1,18 @@
-import { useRouter } from "next/router";
-import { useCart } from "../../src/components/commons/cart/CartContext";
-import OrderItem from "../../src/components/units/order/OrderItem";
+import { useRouter } from 'next/router';
+import { useCart } from '../../src/components/commons/cart/CartContext';
+import OrderItem from '../../src/components/units/order/OrderItem';
 import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
-} from "./order-check.styles";
+} from './order-check.styles';
 
 export default function OrderCheckPage() {
   const router = useRouter();
   const { items } = useCart();
 
   const onClickMoveToOrderComplete = async () => {
-    await router.push("/order-complete");
+    await router.push('/order-complete');
   };
 
   const calculateTotalPrice = () => {
@@ -33,7 +33,9 @@ export default function OrderCheckPage() {
         />
       ))}
       <TotalPriceWrapper>
-        <TotalPrice>Total: ${calculateTotalPrice()}</TotalPrice>
+        <TotalPrice>
+          Total: ${calculateTotalPrice().toLocaleString()}
+        </TotalPrice>
         <CheckoutButton onClick={onClickMoveToOrderComplete}>
           결제....
         </CheckoutButton>

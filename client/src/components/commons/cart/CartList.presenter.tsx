@@ -38,7 +38,7 @@ export default function CartListUI() {
         <CartListBox>
           <CartMenu />
         </CartListBox>
-        <CartTotalPrice>합계 : {totalPrice} 원</CartTotalPrice>
+        <CartTotalPrice>합계 : {totalPrice.toLocaleString()} 원</CartTotalPrice>
         <CartOrderButton onClick={onClickMoveToOrder}>주문하기</CartOrderButton>
       </CartWrapper>
     </>

@@ -50,7 +50,7 @@ const Burgers = () => {
           >
             <img src={menuItem.imageUrl} alt={menuItem.menuName} />
             <h4>{menuItem.menuName}</h4>
-            <p>{menuItem.price}원</p>
+            <p>{menuItem.price.toLocaleString()}원</p>
             <p>수량: {menuItem.amount}</p>
           </CardWrapper2>
         ))}

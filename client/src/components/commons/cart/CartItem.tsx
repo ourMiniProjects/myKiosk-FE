@@ -1,6 +1,6 @@
-import { useCart } from "./CartContext";
-import { MenuItem } from "../../units/category/MenuItem";
-import * as S from "./CartList.styles";
+import { useCart } from './CartContext';
+import { MenuItem } from '../../units/category/MenuItem';
+import * as S from './CartList.styles';
 
 interface CartItemProps {
   item: MenuItem;
@@ -29,7 +29,10 @@ const CartItem: React.FC<CartItemProps> = ({ item, index }) => {
           <S.CountButton onClick={() => incrementItem(item.id)}>
             +
           </S.CountButton>
-          <S.MenuPrice>₩ {item.price * item.amount}</S.MenuPrice>
+
+          <S.MenuPrice>
+            ₩ {(item.price * item.amount).toLocaleString()}
+          </S.MenuPrice>
         </S.CountButtonWrapper>
       </div>
       {/* </S.CartItemWrapper> */}
