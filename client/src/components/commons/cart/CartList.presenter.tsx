@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useCart } from './CartContext';
 import CartMenu from './CartMenu';
@@ -27,6 +28,16 @@ export default function CartListUI() {
     clearCart();
   };
 
+  const cartListRef = useRef(null); // Create a ref to access the DOM element
+  const [prevItemsLength, setPrevItemsLength] = useState(items.length);
+
+  useEffect(() => {
+    if (cartListRef.current && items.length > prevItemsLength) {
+      cartListRef.current.scrollTop = cartListRef.current.scrollHeight;
+    }
+    setPrevItemsLength(items.length); // Update the previous items length
+  }, [items]);
+
   return (
     <>
       <CartWrapper>
@@ -35,7 +46,7 @@ export default function CartListUI() {
           장바구니
           <button onClick={handleRemoveAllItems}>전체 삭제</button>
         </Title>
-        <CartListBox>
+        <CartListBox ref={cartListRef}>
           <CartMenu />
         </CartListBox>
         <CartTotalPrice>합계 : {totalPrice.toLocaleString()} 원</CartTotalPrice>
