@@ -1,20 +1,22 @@
-import { useRouter } from 'next/router';
-import { useCart } from './CartContext';
-import CartMenu from './CartMenu';
+import { useRouter } from "next/router";
+import { useCart } from "./CartContext";
+import CartMenu from "./CartMenu";
 import {
   CartIcon,
   CartListBox,
   CartOrderButton,
   CartTotalPrice,
   CartWrapper,
+  DeleteAllIcon,
   Title,
-} from './CartList.styles';
+  TitleWapper,
+} from "./CartList.styles";
 
 export default function CartListUI() {
   const router = useRouter();
 
   const onClickMoveToOrder = () => {
-    void router.push('/order-check');
+    void router.push("/order-check");
   };
 
   const { items, clearCart } = useCart();
@@ -30,11 +32,13 @@ export default function CartListUI() {
   return (
     <>
       <CartWrapper>
-        <Title>
-          <CartIcon />
-          장바구니
-          <button onClick={handleRemoveAllItems}>전체 삭제</button>
-        </Title>
+        <TitleWapper>
+          <Title>
+            <CartIcon />
+            장바구니
+          </Title>
+          <DeleteAllIcon onClick={handleRemoveAllItems} />
+        </TitleWapper>
         <CartListBox>
           <CartMenu />
         </CartListBox>

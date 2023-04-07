@@ -1,10 +1,12 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import LayoutFooter from "./footer/LayoutFooter";
 import LayoutHeader from "./header/LayoutHeader.container";
 // import CartList from "../cart/CartList.container";
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
 interface ILayoutProps {
@@ -15,6 +17,8 @@ export default function Layout(props: ILayoutProps) {
   const router = useRouter();
 
   const isHiddenHeader = router.pathname === "/menu";
+  const isHiddenFooter =
+    router.pathname === "/order-complete" || router.pathname === "/admin";
 
   return (
     <>
@@ -23,9 +27,7 @@ export default function Layout(props: ILayoutProps) {
           {!isHiddenHeader && <LayoutHeader />}
           {props.children}
         </div>
-        {/* <div style={{ width: "30%" }}>
-          <CartList />
-        </div> */}
+        {!isHiddenFooter && <LayoutFooter />}
       </Wrapper>
     </>
   );
