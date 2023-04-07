@@ -3,7 +3,7 @@ import {
   OrderItemWrapper,
   OrderItemImage,
   OrderItemInfo,
-} from './OrderItem.styles';
+} from "./OrderItem.styles";
 
 interface OrderItemProps {
   id: number;
@@ -24,9 +24,9 @@ const OrderItem: React.FC<OrderItemProps> = ({
     <OrderItemWrapper key={id}>
       <OrderItemImage src={imageUrl} alt={menuName} />
       <OrderItemInfo>{menuName}</OrderItemInfo>
-      <OrderItemInfo>수량:{amount}</OrderItemInfo>
+      <OrderItemInfo>수량: {amount}</OrderItemInfo>
       {/* <OrderItemInfo> ${price}</OrderItemInfo> */}
-      <OrderItemInfo> ￦{(amount * price).toLocaleString()}</OrderItemInfo>
+      <OrderItemInfo>￦ {(amount * price).toLocaleString()}</OrderItemInfo>
     </OrderItemWrapper>
   );
 };

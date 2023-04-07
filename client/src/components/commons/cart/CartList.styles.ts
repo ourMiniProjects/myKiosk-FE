@@ -95,10 +95,9 @@ export const MenuImage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -5px 0px 0px 10px;
+  margin: -5px 0px 0px 5px;
   img {
-    width: 100px;
-
+    width: 90px;
     height: 70px; // 이미지의 최대 높이를 100픽셀로 설정
     object-fit: cover; // 이미지의 가로 세로 비율을 유지하면서 전체 영역을 채움
   }
@@ -119,7 +118,7 @@ export const MenuPrice = styled.div`
   display: flex;
   justify-content: end;
   width: 80px;
-  margin: 0px 15px 0px 30px;
+  margin: 0px 10px 0px 10px;
   font-size: 13pt;
   font-weight: 600;
   color: #303030;
@@ -130,7 +129,7 @@ export const CountButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  width: 90%;
+  width: 95%;
 
   /* background-color: aliceblue; */
 `;

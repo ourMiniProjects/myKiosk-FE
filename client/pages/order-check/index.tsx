@@ -1,19 +1,20 @@
-import { useRouter } from 'next/router';
-import { useCart } from '../../src/components/commons/cart/CartContext';
-import OrderItem from '../../src/components/units/order/OrderItem';
+import { useRouter } from "next/router";
+import { useCart } from "../../src/components/commons/cart/CartContext";
+import OrderItem from "../../src/components/units/order/OrderItem";
 import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
   OrderItemContainer,
-} from './order-check.styles';
+  CardIcon,
+} from "./order-check.styles";
 
 export default function OrderCheckPage() {
   const router = useRouter();
   const { items } = useCart();
 
   const onClickMoveToOrderComplete = async () => {
-    await router.push('/order-complete');
+    await router.push("/order-complete");
   };
 
   const calculateTotalPrice = () => {
@@ -22,7 +23,6 @@ export default function OrderCheckPage() {
 
   return (
     <>
-      <div>CheckOrderPage</div>
       <OrderItemContainer>
         {items.map((item) => (
           <OrderItem
@@ -37,10 +37,11 @@ export default function OrderCheckPage() {
       </OrderItemContainer>
       <TotalPriceWrapper>
         <TotalPrice>
-          Total: ${calculateTotalPrice().toLocaleString()}
+          Total : ₩ {calculateTotalPrice().toLocaleString()}
         </TotalPrice>
         <CheckoutButton onClick={onClickMoveToOrderComplete}>
-          결제....
+          <CardIcon />
+          결제하기
         </CheckoutButton>
       </TotalPriceWrapper>
     </>

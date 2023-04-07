@@ -2,16 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useCart } from "./CartContext";
 import CartMenu from "./CartMenu";
-import {
-  CartIcon,
-  CartListBox,
-  CartOrderButton,
-  CartTotalPrice,
-  CartWrapper,
-  DeleteAllIcon,
-  Title,
-  TitleWapper,
-} from "./CartList.styles";
+import * as S from "./CartList.styles";
 
 export default function CartListUI() {
   const router = useRouter();
@@ -42,20 +33,24 @@ export default function CartListUI() {
 
   return (
     <>
-      <CartWrapper>
-        <TitleWapper>
-          <Title>
-            <CartIcon />
+      <S.CartWrapper>
+        <S.TitleWapper>
+          <S.Title>
+            <S.CartIcon />
             장바구니
-          </Title>
-          <DeleteAllIcon onClick={handleRemoveAllItems} />
-        </TitleWapper>
-        <CartListBox>
+          </S.Title>
+          <S.DeleteAllIcon onClick={handleRemoveAllItems} />
+        </S.TitleWapper>
+        <S.CartListBox>
           <CartMenu />
-        </CartListBox>
-        <CartTotalPrice>합계 : {totalPrice.toLocaleString()} 원</CartTotalPrice>
-        <CartOrderButton onClick={onClickMoveToOrder}>주문하기</CartOrderButton>
-      </CartWrapper>
+        </S.CartListBox>
+        <S.CartTotalPrice>
+          합계 : {totalPrice.toLocaleString()} 원
+        </S.CartTotalPrice>
+        <S.CartOrderButton onClick={onClickMoveToOrder}>
+          주문하기
+        </S.CartOrderButton>
+      </S.CartWrapper>
     </>
   );
 }
