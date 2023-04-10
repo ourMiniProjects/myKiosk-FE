@@ -21,7 +21,7 @@ export default function CartListUI() {
     clearCart();
   };
 
-  const cartListRef = useRef(null); // Create a ref to access the DOM element
+  const cartListRef = useRef<HTMLDivElement>(null); // Create a ref to access the DOM element
   const [prevItemsLength, setPrevItemsLength] = useState(items.length);
 
   useEffect(() => {
@@ -41,7 +41,8 @@ export default function CartListUI() {
           </S.Title>
           <S.DeleteAllIcon onClick={handleRemoveAllItems} />
         </S.TitleWapper>
-        <S.CartListBox>
+
+        <S.CartListBox ref={cartListRef}>
           <CartMenu />
         </S.CartListBox>
         <S.CartTotalPrice>
