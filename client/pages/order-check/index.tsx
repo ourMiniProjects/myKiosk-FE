@@ -1,19 +1,30 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useCart } from '../../src/components/commons/cart/CartContext';
 import OrderItem from '../../src/components/units/order/OrderItem';
 import Modal from 'react-modal';
 
+=======
+import { useRouter } from "next/router";
+import { useCart } from "../../src/components/commons/cart/CartContext";
+import OrderItem from "../../src/components/units/order/OrderItem";
+>>>>>>> 6f614de58a9806bbd096c3eb81e21a2f30657fb0
 import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
   OrderItemContainer,
+<<<<<<< HEAD
   ModalContent,
   TextContainer,
   ButtonContainer,
   CancelButton,
 } from './order-check.styles';
+=======
+  CardIcon,
+} from "./order-check.styles";
+>>>>>>> 6f614de58a9806bbd096c3eb81e21a2f30657fb0
 
 Modal.setAppElement('#__next');
 
@@ -33,7 +44,7 @@ export default function OrderCheckPage() {
   };
 
   const onClickMoveToOrderComplete = async () => {
-    await router.push('/order-complete');
+    await router.push("/order-complete");
   };
 
   const onUsePoints = () => {
@@ -93,7 +104,6 @@ export default function OrderCheckPage() {
 
   return (
     <>
-      <div>CheckOrderPage</div>
       <OrderItemContainer>
         {items.map((item) => (
           <OrderItem
@@ -108,9 +118,15 @@ export default function OrderCheckPage() {
       </OrderItemContainer>
       <TotalPriceWrapper>
         <TotalPrice>
-          Total: ${calculateTotalPrice().toLocaleString()}
+          Total : ₩ {calculateTotalPrice().toLocaleString()}
         </TotalPrice>
+
         <CheckoutButton onClick={openModal}>결제하기</CheckoutButton>
+
+        {/* <CheckoutButton onClick={onClickMoveToOrderComplete}>
+          <CardIcon />
+          결제하기
+        </CheckoutButton> */}
       </TotalPriceWrapper>
       {/* 모달/스타일 */}
       <Modal

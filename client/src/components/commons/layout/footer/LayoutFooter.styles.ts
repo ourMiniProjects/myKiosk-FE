@@ -18,7 +18,7 @@ export const InnerWrapper = styled.div`
 `;
 
 export const FooterLeftBox = styled.div`
-  width: 80%;
+  width: 90%;
   font-size: 12pt;
   letter-spacing: 0.7px;
   color: #a9acab;

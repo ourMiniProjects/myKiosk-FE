@@ -1,42 +1,38 @@
-import styled from 'styled-components';
-
-export const TotalPriceWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background: red; */
-  width: 85%;
-  height: 60px;
-
-  padding: 8px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-`;
+import styled from "styled-components";
+import { BsCreditCard } from "react-icons/bs";
 
 export const OrderItemContainer = styled.div`
-  height: 600px; // 원하는 최대 높이 설정
-  overflow-y: auto; // 세로 스크롤 표시
-  margin-bottom: 20px; // 필요한 경우 하단 여백 추가
+  height: 540px;
+  padding: 20px 0px 60px 0px;
+  overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
   }
 `;
 
+export const TotalPriceWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 60px;
+  margin: 10px auto 200px auto;
+  padding: 10px;
+`;
+
 export const TotalPrice = styled.h2`
-  width: 75%;
+  width: 70%;
   height: 50px;
   display: flex;
   margin-left: -8px;
+  padding: 10px 40px 10px 40px;
   align-items: center;
   justify-content: flex-end;
   box-shadow: 5px 5px 10px #bebebe, 5px 5px 5px #ffffff;
-
-  border: 1px solid #bebebe;
   border-radius: 10px;
-  background-color: #bebebe;
+  background-color: #2a2a2aa3;
   color: white;
-  padding: 8px;
+  letter-spacing: 1pt;
 `;
 
 export const CheckoutButton = styled.h4`
@@ -46,13 +42,19 @@ export const CheckoutButton = styled.h4`
   align-items: center;
   justify-content: center;
   margin-right: -8px;
-  border: 1px solid #000;
+  padding: 10px 5px 10px 5px;
   border-radius: 10px;
-  background-color: #f7ce5ccf;
-  color: black;
-  border: none;
-  padding: 8px;
   box-shadow: 5px 5px 10px #bebebe, 5px 5px 5px #ffffff;
+  background-color: #f7cd5c;
+  color: #252525;
+  font-size: 18px;
+  letter-spacing: 0.5pt;
+  cursor: pointer;
+`;
+
+export const CardIcon = styled(BsCreditCard)`
+  margin-right: 10px;
+  font-size: 20px;
 `;
 
 export const ModalContent = styled.div`

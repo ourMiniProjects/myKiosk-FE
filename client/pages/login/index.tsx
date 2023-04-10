@@ -1,26 +1,26 @@
-import { useRouter } from 'next/router';
-import NumberPad from '../../src/components/commons/numberpad/NumberPad';
-import { Input } from 'antd';
+import { useRouter } from "next/router";
+import NumberPad from "../../src/components/commons/numberpad/NumberPad";
+import { Input } from "antd";
 import {
   Container,
   InputBox,
   SelectCard,
   SelectCardLogin,
-} from './login.styles';
-import { useState } from 'react';
+} from "./login.styles";
+import { useState } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
 
   const onClickMoveToSignup = async () => {
-    await router.push('/signup');
+    await router.push("/signup");
   };
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const handleNumberPadClick = (value: string): string => {
-    let newInputValue = '';
+    let newInputValue = "";
 
-    if (value === 'X') {
+    if (value === "X") {
       newInputValue = inputValue.slice(0, -1);
     } else {
       newInputValue = inputValue + value;
@@ -34,15 +34,15 @@ export default function LoginPage() {
     <>
       <Container>
         <SelectCard onClick={onClickMoveToSignup}>
-          <img src='/images/select-joinUs.png' />
+          <img src="/images/select-joinUs.png" />
           간편 멤버십 가입하기
         </SelectCard>
         <SelectCardLogin>
-          <img style={{ marginTop: '15px' }} src='/images/login-title.png' />
+          <img style={{ marginTop: "15px" }} src="/images/login-title.png" />
           <InputBox>
             <Input
-              size='large'
-              placeholder='전화번호를 입력해주세요.'
+              size="large"
+              placeholder="전화번호를 입력해주세요."
               value={inputValue}
             />
           </InputBox>
@@ -50,7 +50,7 @@ export default function LoginPage() {
           <NumberPad
             onClick={handleNumberPadClick}
             inputValue={inputValue}
-            mode='login'
+            mode="login"
           />
         </SelectCardLogin>
       </Container>

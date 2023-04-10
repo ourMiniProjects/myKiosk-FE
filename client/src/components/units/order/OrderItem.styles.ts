@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const OrderItemWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 85%;
-  height: 100px;
-  border: 1px solid #bebebe;
+  width: 70%;
+  height: 75px;
+  border: 1px solid #bebebe7d;
   border-radius: 10px;
   padding: 8px;
   margin-top: 20px;
@@ -13,6 +13,7 @@ export const OrderItemWrapper = styled.div`
   margin-right: auto;
   justify-content: space-between;
   box-shadow: 5px 5px 10px #bebebe, 5px 5px 5px #ffffff;
+  font-size: 13pt;
 `;
 
 export const OrderItemImage = styled.img`

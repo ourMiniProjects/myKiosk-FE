@@ -33,6 +33,7 @@
     "react-lottie": "^1.2.3",
     "react-modal": "^3.16.1",
     "styled-components": "^5.3.9",
+    "sweetalert": "^2.1.2",
     "typescript": "^5.0.2"
   },
   "devDependencies": {
