@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import Lottie from "react-lottie";
-import animationData from "../../src/components/commons/lotties/burger-preparing.json";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Lottie from 'react-lottie';
+import animationData from '../../src/components/commons/lotties/burger-preparing.json';
+import { useRouter } from 'next/router';
 
 export default function OrderCompletePage() {
   const [timeoutId, setTimeoutId] = useState<null | NodeJS.Timeout>(null);
@@ -12,9 +13,11 @@ export default function OrderCompletePage() {
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
+
+  const router = useRouter();
 
   // useEffect(() => {
   //   const timeout = setTimeout(() => {
@@ -40,7 +43,7 @@ export default function OrderCompletePage() {
     }, 1000);
 
     const timeout = setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = '/';
     }, 9000);
 
     return () => {
@@ -48,6 +51,10 @@ export default function OrderCompletePage() {
       clearTimeout(timeout);
     };
   }, []);
+
+  const onClickMoveToHome = async () => {
+    await router.push('/');
+  };
 
   return (
     <>
@@ -63,6 +70,7 @@ export default function OrderCompletePage() {
           <div>
             <CountDown>{countdown}</CountDown>초 뒤 홈 화면으로 이동합니다.
           </div>
+          <button onClick={onClickMoveToHome}> 홈화면으로.</button>
         </TextBox>
       </Wrapper>
     </>
@@ -91,7 +99,7 @@ const TextBox = styled.div`
 `;
 
 const TextBox2 = styled.div`
-  font-family: "myfont";
+  font-family: 'myfont';
   font-size: 32pt;
   padding: 15px;
   margin-bottom: 10px;
@@ -101,7 +109,7 @@ const TextBox2 = styled.div`
 `;
 
 const CountDown = styled.span`
-  font-family: "myfont";
+  font-family: 'myfont';
   font-size: 20pt;
   padding: 5px;
   font-weight: 700;

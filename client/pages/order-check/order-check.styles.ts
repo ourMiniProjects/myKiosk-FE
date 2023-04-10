@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { BsCreditCard } from "react-icons/bs";
+import styled from 'styled-components';
+import { BsCreditCard } from 'react-icons/bs';
 
 export const OrderItemContainer = styled.div`
   height: 540px;
@@ -52,7 +52,62 @@ export const CheckoutButton = styled.h4`
   cursor: pointer;
 `;
 
+export const PointButton = styled.h4`
+  height: 50px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -8px;
+  padding: 10px 5px 10px 5px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #bebebe, 5px 5px 5px #ffffff;
+  background-color: #d9d9d9;
+  color: #252525;
+  font-size: 18px;
+  letter-spacing: 0.5pt;
+  cursor: pointer;
+`;
+
 export const CardIcon = styled(BsCreditCard)`
   margin-right: 10px;
   font-size: 20px;
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 70px;
+`;
+
+export const CancelButton = styled.button`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  color: #333;
 `;
