@@ -43,19 +43,34 @@ export default function OrderCheckPage() {
     if (usePoints) {
       return (
         <>
-          <h2>포인트 사용</h2>
-          <p>포인트로 결제를 진행하시겠습니까?</p>
-          <button onClick={onClickMoveToOrderComplete}>포인트 사용 결제</button>
-          <button onClick={closeModal}>취소</button>
+          <div className='modal-content'>
+            <h2>포인트 사용</h2>
+            <p>
+              {`{주문번호}`} 고객님의 잔여 포인트는 {`{000}`}원 입니다.
+            </p>
+            <p>{`{00}`} 원 사용하기</p>
+            <p>남은포인트: {`{000}`}</p>
+            <button onClick={onClickMoveToOrderComplete}>
+              포인트 사용 결제
+            </button>
+            <button onClick={closeModal}>취소</button>
+          </div>
         </>
       );
     } else {
       return (
         <>
-          <h2>결제 확인</h2>
-          <p>결제를 진행하시겠습니까?</p>
-          <button onClick={onUsePoints}>포인트 사용</button>
-          <button onClick={closeModal}>취소</button>
+          <div className='modal-content'>
+            <h2>결제 확인</h2>
+            <p>
+              {`{주문번호}`} 고객님의 잔여 포인트는 {`{000}`}원 입니다.
+            </p>
+
+            <button onClick={onUsePoints}>포인트 사용하기</button>
+            <button onClick={onClickMoveToOrderComplete}> 결제하기</button>
+
+            <button onClick={closeModal}>취소</button>
+          </div>
         </>
       );
     }
@@ -97,10 +112,15 @@ export default function OrderCheckPage() {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '30%',
+            width: '800px',
+            height: '600px',
             textAlign: 'center',
             borderRadius: '20px',
             padding: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
           },
         }}
       >
