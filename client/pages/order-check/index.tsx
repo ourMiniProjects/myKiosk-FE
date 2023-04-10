@@ -3,11 +3,16 @@ import { useRouter } from 'next/router';
 import { useCart } from '../../src/components/commons/cart/CartContext';
 import OrderItem from '../../src/components/units/order/OrderItem';
 import Modal from 'react-modal';
+
 import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
   OrderItemContainer,
+  ModalContent,
+  TextContainer,
+  ButtonContainer,
+  CancelButton,
 } from './order-check.styles';
 
 Modal.setAppElement('#__next');
@@ -43,34 +48,44 @@ export default function OrderCheckPage() {
     if (usePoints) {
       return (
         <>
-          <div className='modal-content'>
-            <h2>포인트 사용</h2>
-            <p>
-              {`{주문번호}`} 고객님의 잔여 포인트는 {`{000}`}원 입니다.
-            </p>
-            <p>{`{00}`} 원 사용하기</p>
-            <p>남은포인트: {`{000}`}</p>
-            <button onClick={onClickMoveToOrderComplete}>
-              포인트 사용 결제
-            </button>
-            <button onClick={closeModal}>취소</button>
-          </div>
+          <ModalContent>
+            <TextContainer>
+              <h2>포인트 사용</h2>
+              <p>
+                {`{주문번호}`} 고객님의 잔여 포인트는 {`{000}`}원 입니다.
+              </p>
+              <p>{`{00}`} 원 사용하기</p>
+              <p>남은포인트: {`{000}`}</p>
+            </TextContainer>
+            <ButtonContainer>
+              <button onClick={onClickMoveToOrderComplete}>
+                포인트 사용 결제
+              </button>
+            </ButtonContainer>
+            <CancelButton onClick={closeModal}>&times;</CancelButton>
+          </ModalContent>
         </>
       );
     } else {
       return (
         <>
-          <div className='modal-content'>
-            <h2>결제 확인</h2>
-            <p>
-              {`{주문번호}`} 고객님의 잔여 포인트는 {`{000}`}원 입니다.
-            </p>
+          <ModalContent>
+            <TextContainer>
+              <h2>결제 확인</h2>
+              <p>
+                {`{주문번호}`} 고객님의 잔여 포인트는 {`{000}`}원 입니다.
+              </p>
+            </TextContainer>
+            <ButtonContainer>
+              <button onClick={onUsePoints}>포인트 사용하기</button>
+              <CheckoutButton onClick={onClickMoveToOrderComplete}>
+                {' '}
+                결제하기
+              </CheckoutButton>
+            </ButtonContainer>
 
-            <button onClick={onUsePoints}>포인트 사용하기</button>
-            <button onClick={onClickMoveToOrderComplete}> 결제하기</button>
-
-            <button onClick={closeModal}>취소</button>
-          </div>
+            <CancelButton onClick={closeModal}>&times;</CancelButton>
+          </ModalContent>
         </>
       );
     }
@@ -95,8 +110,9 @@ export default function OrderCheckPage() {
         <TotalPrice>
           Total: ${calculateTotalPrice().toLocaleString()}
         </TotalPrice>
-        <CheckoutButton onClick={openModal}>결제....</CheckoutButton>
+        <CheckoutButton onClick={openModal}>결제하기</CheckoutButton>
       </TotalPriceWrapper>
+      {/* 모달/스타일 */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -117,10 +133,10 @@ export default function OrderCheckPage() {
             textAlign: 'center',
             borderRadius: '20px',
             padding: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            // display: 'flex',
+            // flexDirection: 'column',
+            // alignItems: 'center',
+            // justifyContent: 'center',
           },
         }}
       >
