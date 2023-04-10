@@ -1,30 +1,20 @@
-<<<<<<< HEAD
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useCart } from '../../src/components/commons/cart/CartContext';
 import OrderItem from '../../src/components/units/order/OrderItem';
 import Modal from 'react-modal';
-
-=======
-import { useRouter } from "next/router";
-import { useCart } from "../../src/components/commons/cart/CartContext";
-import OrderItem from "../../src/components/units/order/OrderItem";
->>>>>>> 6f614de58a9806bbd096c3eb81e21a2f30657fb0
 import {
   TotalPriceWrapper,
   TotalPrice,
   CheckoutButton,
   OrderItemContainer,
-<<<<<<< HEAD
   ModalContent,
   TextContainer,
   ButtonContainer,
   CancelButton,
-} from './order-check.styles';
-=======
+  PointButton,
   CardIcon,
-} from "./order-check.styles";
->>>>>>> 6f614de58a9806bbd096c3eb81e21a2f30657fb0
+} from './order-check.styles';
 
 Modal.setAppElement('#__next');
 
@@ -44,7 +34,7 @@ export default function OrderCheckPage() {
   };
 
   const onClickMoveToOrderComplete = async () => {
-    await router.push("/order-complete");
+    await router.push('/order-complete');
   };
 
   const onUsePoints = () => {
@@ -69,9 +59,9 @@ export default function OrderCheckPage() {
               <p>남은포인트: {`{000}`}</p>
             </TextContainer>
             <ButtonContainer>
-              <button onClick={onClickMoveToOrderComplete}>
-                포인트 사용 결제
-              </button>
+              <CheckoutButton onClick={onClickMoveToOrderComplete}>
+                결제하기
+              </CheckoutButton>
             </ButtonContainer>
             <CancelButton onClick={closeModal}>&times;</CancelButton>
           </ModalContent>
@@ -88,7 +78,7 @@ export default function OrderCheckPage() {
               </p>
             </TextContainer>
             <ButtonContainer>
-              <button onClick={onUsePoints}>포인트 사용하기</button>
+              <PointButton onClick={onUsePoints}>포인트 사용하기</PointButton>
               <CheckoutButton onClick={onClickMoveToOrderComplete}>
                 {' '}
                 결제하기
@@ -121,12 +111,10 @@ export default function OrderCheckPage() {
           Total : ₩ {calculateTotalPrice().toLocaleString()}
         </TotalPrice>
 
-        <CheckoutButton onClick={openModal}>결제하기</CheckoutButton>
-
-        {/* <CheckoutButton onClick={onClickMoveToOrderComplete}>
+        <CheckoutButton onClick={openModal}>
           <CardIcon />
           결제하기
-        </CheckoutButton> */}
+        </CheckoutButton>
       </TotalPriceWrapper>
       {/* 모달/스타일 */}
       <Modal
