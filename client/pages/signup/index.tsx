@@ -1,49 +1,30 @@
-import { Input } from 'antd';
-import NumberPad from '../../src/components/commons/numberpad/NumberPad';
-import { useState } from 'react';
-import {
-  Container,
-  ImageBox,
-  InputBox,
-  SelectCardSignup,
-} from './signUp.styles';
+import NumberPad from "../../src/components/commons/numberpad/NumberPad";
+import { useState } from "react";
+import { Container, ImageBox, SelectCardSignup } from "./signUp.styles";
 
 export default function SignUpPage() {
-  const [inputValue, setInputValue] = useState('');
-  const handleNumberPadClick = (value: string): string => {
-    let newInputValue = '';
+  const [inputValue, setInputValue] = useState("");
 
-    if (value === 'X') {
-      newInputValue = inputValue.slice(0, -1);
-    } else {
-      newInputValue = inputValue + value;
+  const handleNumberPadClick = (value: string | KeyboardEvent): string => {
+    if (typeof value === "string") {
+      setInputValue((prev) => prev + value);
     }
-
-    setInputValue(newInputValue);
-    return newInputValue;
+    return "";
   };
 
   return (
     <>
       <Container>
         <SelectCardSignup>
-          <img style={{ marginTop: '15px' }} src='/images/joinUs-title.png' />
-          <InputBox>
-            <Input
-              size='large'
-              placeholder='전화번호를 입력해주세요.'
-              value={inputValue}
-            />
-          </InputBox>
-
+          <img style={{ marginTop: "15px" }} src="/images/joinUs-title.png" />
           <NumberPad
             onClick={handleNumberPadClick}
-            inputValue={inputValue}
-            mode='signup'
+            inputValue={""}
+            mode={"join"}
           />
         </SelectCardSignup>
         <ImageBox>
-          <img src='/images/welcome.png' />
+          <img src="/images/welcome.png" />
         </ImageBox>
       </Container>
     </>
