@@ -1,33 +1,33 @@
 import { useRouter } from "next/router";
-import NumberPad from "../../src/components/commons/numberpad/NumberPad";
-import { Input } from "antd";
-import {
-  Container,
-  InputBox,
-  SelectCard,
-  SelectCardLogin,
-} from "./login.styles";
 import { useState } from "react";
+import NumberPad from "../../src/components/commons/numberpad/NumberPad";
+import { Container, SelectCard, SelectCardLogin } from "./login.styles";
 
 export default function LoginPage() {
   const router = useRouter();
+  const [inputValue, setInputValue] = useState("");
 
-  const onClickMoveToSignup = async () => {
-    await router.push("/signup");
+  const handleNumberPadClick = (value: string | KeyboardEvent): string => {
+    if (typeof value === "string") {
+      setInputValue((prev) =>
+        value === "X" ? prev.slice(0, -1) : prev + value
+      );
+    } else if (value instanceof KeyboardEvent) {
+      const key = value.key;
+
+      if (key === "Enter") {
+        router.push("/menu");
+      } else if (key === "Backspace") {
+        setInputValue((prev) => prev.slice(0, -1));
+      } else if (key >= "0" && key <= "9") {
+        setInputValue((prev) => prev + key);
+      }
+    }
+    return "";
   };
 
-  const [inputValue, setInputValue] = useState("");
-  const handleNumberPadClick = (value: string): string => {
-    let newInputValue = "";
-
-    if (value === "X") {
-      newInputValue = inputValue.slice(0, -1);
-    } else {
-      newInputValue = inputValue + value;
-    }
-
-    setInputValue(newInputValue);
-    return newInputValue;
+  const onClickMoveToSignup = () => {
+    router.push("/signup");
   };
 
   return (
@@ -39,18 +39,10 @@ export default function LoginPage() {
         </SelectCard>
         <SelectCardLogin>
           <img style={{ marginTop: "15px" }} src="/images/login-title.png" />
-          <InputBox>
-            <Input
-              size="large"
-              placeholder="전화번호를 입력해주세요."
-              value={inputValue}
-            />
-          </InputBox>
-
           <NumberPad
             onClick={handleNumberPadClick}
             inputValue={inputValue}
-            mode="login"
+            mode={"login"}
           />
         </SelectCardLogin>
       </Container>
