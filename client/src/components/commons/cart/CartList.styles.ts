@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { BsCart3 } from "react-icons/bs";
-import { TiDelete } from "react-icons/ti";
-import { MdRefresh } from "react-icons/md";
+import styled from 'styled-components';
+import { BsCart3 } from 'react-icons/bs';
+import { TiDelete } from 'react-icons/ti';
+import { MdRefresh } from 'react-icons/md';
 
 export const CartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 240px;
   height: 780px;
   padding: 50px 40px 40px 40px;
   margin: 30px 10px 150px -20px;
@@ -97,8 +97,8 @@ export const MenuImage = styled.div`
   justify-content: center;
   margin: -5px 0px 0px 5px;
   img {
-    width: 90px;
-    height: 70px; // 이미지의 최대 높이를 100픽셀로 설정
+    width: 70px;
+    height: 60px;
     object-fit: cover; // 이미지의 가로 세로 비율을 유지하면서 전체 영역을 채움
   }
 `;
@@ -108,7 +108,7 @@ export const MenuName = styled.div`
   align-items: center;
   margin: 10px 10px 10px 5px;
   /* font-size: 14pt; */
-  font-size: 110%;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #303030;
@@ -119,7 +119,7 @@ export const MenuPrice = styled.div`
   justify-content: end;
   width: 80px;
   margin: 0px 10px 0px 10px;
-  font-size: 13pt;
+  font-size: 12pt;
   font-weight: 600;
   color: #303030;
 `;
@@ -141,11 +141,11 @@ export const CountButton = styled.div`
   background-color: #ffffff70;
   border-radius: 5px;
   width: 10px;
-  height: 10px;
+  height: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   margin: 3px;
-  padding: 10px;
-  font-size: 14pt;
+  padding: 5px;
+  font-size: 12pt;
   color: #303030;
   cursor: pointer;
 `;
